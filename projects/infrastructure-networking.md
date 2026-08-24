@@ -1,6 +1,7 @@
 # Secure Home Lab and Compute Infrastructure
 
 *A private-overlay network and a measured CPU/GPU compute environment, built to run everything else in this portfolio.*
+**Status:** Implemented — built and in personal use; router/switch and cloud-platform work is coursework, not production deployment.
 
 ## Problem
 
@@ -10,7 +11,7 @@ Separately, the machine-learning and simulation work elsewhere in this portfolio
 
 ## What I built
 
-A private mesh overlay network joins the workstation and my mobile devices, each authorized individually rather than through a shared credential; no service on the workstation intentionally listens on a public port. A compute layer runs a pool of CPU workers alongside GPU-accelerated scoring under Linux on Windows, with work routed to CPU or GPU by measured per-workload throughput crossover points rather than a fixed preference. A four-tier storage layout assigns drives to roles by measured write-durability latency. Separately, I completed 22 router and switch simulation labs covering OSPF, EIGRP, access control lists, and NAT, and I am partway through cloud-platform coursework and tooling setup for Azure and Google Cloud.
+A private mesh overlay network joins the workstation and my mobile devices, each authorized individually rather than through a shared credential; no service on the workstation intentionally listens on a public port. A compute layer runs a pool of CPU workers alongside GPU-accelerated scoring under Linux on Windows, with work routed to CPU or GPU by measured per-workload throughput crossover points rather than a fixed preference. A four-tier storage layout assigns drives to roles by measured write-durability latency. Separately, I completed 22 router and switch simulation labs covering OSPF, EIGRP, access control lists, and NAT (**Coursework**), and I am partway through cloud-platform coursework and tooling setup for Azure and Google Cloud (**Coursework**, in progress).
 
 ![Network topology](../assets/network-topology.svg)
 ![Compute routing](../assets/compute-routing.svg)
@@ -27,7 +28,7 @@ A private mesh overlay network joins the workstation and my mobile devices, each
 
 **Retracting an unverified figure.** An earlier note claimed roughly a 5% overall speedup from the GPU work. This was an arithmetic error: an optimized compute phase was divided into a wall-clock total dominated by unrelated steps it did not touch. I traced the error and withdrew the claim.
 
-## Public proof or evidence available
+## Publicly demonstrated / evidence available
 
 **Publicly verifiable now:** the two diagrams above, showing the overlay-network pattern in generic, non-identifying form and the measured CPU/GPU routing crossover, are in this repository for direct inspection.
 
@@ -40,3 +41,9 @@ The result is a workstation reachable from mobile devices with no intentionally 
 ## Honest scope boundary
 
 This is a single-user home network, not an enterprise deployment, and it has no production change-control process. No infrastructure has been deployed on Azure or Google Cloud; that work is coursework and tooling familiarity only. The routing and switching work is simulation-lab coursework, not configuration of production hardware. The benchmark figures cited above come from single-workload samples on one machine, not from broad or repeated benchmarking, and are stated with that limitation each time.
+
+## Related work
+
+- [Quantitative research](quantitative-research.md) — the workloads this compute and storage layer was built to run.
+- [Local-inference platform](local-inference-platform.md) — another project whose local-CPU inference decisions rest on the same measured-crossover discipline used here.
+- [Technical decision records](technical-decision-records.md) — the fuller record of judgment calls behind this and other projects, including ones that did not make this page.

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 470" width="960" height="470" role="img" aria-labelledby="t d">
+<title id="t">Product platform shape</title>
+<desc id="d">A generic product architecture: web and desktop clients reach an API and service layer, which reaches a data and integration layer holding a relational database and third-party integrations for payments, messaging and identity. Static front ends are served from an edge platform; service code runs as containers.</desc>
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#5b6b7f"/></marker>
+<style>
+.b{fill:#fff;stroke:#c6d0da;stroke-width:1.5}
+.h{font:600 14px 'Segoe UI',Arial,sans-serif;fill:#16212e}
+.s{font:12.5px 'Segoe UI',Arial,sans-serif;fill:#5b6b7f}
+.l{font:600 11.5px 'Segoe UI',Arial,sans-serif;fill:#5b6b7f;letter-spacing:.07em}
+.ttl{font:700 18px 'Segoe UI',Arial,sans-serif;fill:#16212e}
+.cap{font:italic 12.5px 'Segoe UI',Arial,sans-serif;fill:#5b6b7f}
+</style></defs>
+<rect width="960" height="470" fill="#f7f9fb"/>
+<text x="40" y="42" class="ttl">Product platform shape</text>
+<text x="40" y="66" class="cap">Generic structure common to the product surfaces. No provider, host, or account detail.</text>
+
+<rect x="40" y="100" width="240" height="230" rx="10" fill="#f4f8fb" stroke="#b8cadb" stroke-width="1.5"/>
+<text x="60" y="128" class="l">CLIENTS</text>
+<rect x="60" y="146" width="200" height="52" rx="8" class="b"/><text x="160" y="177" class="h" text-anchor="middle">Web client</text>
+<rect x="60" y="212" width="200" height="52" rx="8" class="b"/><text x="160" y="243" class="h" text-anchor="middle">Desktop client</text>
+<text x="60" y="296" class="s">Static front ends served</text><text x="60" y="314" class="s">from an edge platform</text>
+
+<rect x="360" y="100" width="240" height="230" rx="10" fill="#f2f7fc" stroke="#7fa3c9" stroke-width="1.5"/>
+<text x="380" y="128" class="l">API / SERVICE LAYER</text>
+<rect x="380" y="146" width="200" height="52" rx="8" class="b"/><text x="480" y="171" class="h" text-anchor="middle">REST API</text><text x="480" y="189" class="s" text-anchor="middle">request handling</text>
+<rect x="380" y="212" width="200" height="52" rx="8" class="b"/><text x="480" y="237" class="h" text-anchor="middle">Service logic</text><text x="480" y="255" class="s" text-anchor="middle">auth, licensing, jobs</text>
+<text x="380" y="296" class="s">Runs as containers on a</text><text x="380" y="314" class="s">managed container platform</text>
+
+<rect x="680" y="100" width="240" height="230" rx="10" fill="#f6f4fa" stroke="#b3a8cc" stroke-width="1.5"/>
+<text x="700" y="128" class="l">DATA / INTEGRATION</text>
+<rect x="700" y="146" width="200" height="52" rx="8" class="b"/><text x="800" y="177" class="h" text-anchor="middle">Relational database</text>
+<rect x="700" y="212" width="200" height="52" rx="8" class="b"/><text x="800" y="237" class="h" text-anchor="middle">Third-party services</text><text x="800" y="255" class="s" text-anchor="middle">payments · messaging · identity</text>
+<text x="700" y="296" class="s">Credentials held as platform</text><text x="700" y="314" class="s">secrets, never in source</text>
+
+<line x1="280" y1="215" x2="352" y2="215" stroke="#5b6b7f" stroke-width="2" marker-end="url(#a)"/>
+<line x1="600" y1="215" x2="672" y2="215" stroke="#5b6b7f" stroke-width="2" marker-end="url(#a)"/>
+
+<rect x="40" y="358" width="880" height="60" rx="8" class="b"/>
+<text x="62" y="383" class="l">THE TRADE-OFF THIS SHAPE ENCODES</text>
+<text x="62" y="405" class="s">A heavier managed cloud stack was retained for a complex stateful workload; simpler services run on a leaner container platform. Workload-matched, not a migration.</text>
+
+<text x="40" y="450" class="cap">Illustrative architecture. Current public availability of any specific product is not asserted here.</text>
+</svg>

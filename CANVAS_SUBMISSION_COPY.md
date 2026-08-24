@@ -27,26 +27,45 @@ infrastructure security, and security automation.
 
 ---
 
-#### Featured projects
+#### Flagship projects
 
 **Multi-Agent Verification Factory**
 A task pipeline in which an independent deterministic verifier — never the worker that did the work —
 decides whether a task was actually completed, and where insufficient evidence fails closed instead
-of passing quietly. The design applies separation of duties and independent audit to automated work.
+of passing quietly.
 → https://github.com/jarvist0254/ftcc-professional-portfolio/blob/main/projects/verification-factory.md
 
 **Security Operations Practice**
 Graded security-operations coursework — an access-control review, an incident-response case study
 reconstructed as an event timeline, and a posture assessment against NIST SP 800-53, the CIS
-Controls, and ISO/IEC 27001 — together with a self-built SOC tooling prototype for alert triage and
-endpoint telemetry.
+Controls, and ISO/IEC 27001 — together with a self-built SOC tooling prototype.
 → https://github.com/jarvist0254/ftcc-professional-portfolio/blob/main/projects/security-operations.md
 
 **Secure Home Lab and Compute Infrastructure**
 A personal network reached through a private device-authorized overlay rather than a forwarded port,
-so no inbound public service is intentionally exposed, plus a compute environment that routes work
-between CPU and GPU according to measured behaviour rather than assumption.
+plus a compute environment that routes work between CPU and GPU according to measured behaviour.
 → https://github.com/jarvist0254/ftcc-professional-portfolio/blob/main/projects/infrastructure-networking.md
+
+#### Additional engineering work
+
+- **Local-Inference Desktop Platform** — core model inference running locally on CPU, with no hosted
+  model API in that path.
+  → https://github.com/jarvist0254/ftcc-professional-portfolio/blob/main/projects/local-inference-platform.md
+- **Product Platforms** — independently built web and desktop product surfaces, and the API,
+  integration, and cost trade-offs behind them.
+  → https://github.com/jarvist0254/ftcc-professional-portfolio/blob/main/projects/product-platforms.md
+- **Distributed Systems** — a network designed to settle only after independent validators re-check
+  a worker's computation.
+  → https://github.com/jarvist0254/ftcc-professional-portfolio/blob/main/projects/distributed-systems.md
+- **Quantitative Research System** — a research instrument built to invalidate its own findings,
+  including formal retraction of results that failed review.
+  → https://github.com/jarvist0254/ftcc-professional-portfolio/blob/main/projects/quantitative-research.md
+- **Machine-Learning Model Publication** — openly published model bases and the reasoning behind
+  what was deliberately withheld.
+  → https://github.com/jarvist0254/ftcc-professional-portfolio/blob/main/projects/machine-learning-models.md
+- **Technical Decision Records** — thirteen engineering decisions with the alternatives rejected and
+  what the evidence showed.
+  → https://github.com/jarvist0254/ftcc-professional-portfolio/blob/main/projects/technical-decision-records.md
 
 **Full portfolio index**
 → https://github.com/jarvist0254/ftcc-professional-portfolio

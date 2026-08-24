@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 450" width="960" height="450" role="img" aria-labelledby="t d">
+<title id="t">Research integrity loop</title>
+<desc id="d">A hypothesis is measured, then deliberately challenged with break tests, then reviewed. The review has three possible outcomes: retain, revise, or retract. Revision returns to measurement, so the loop repeats. Retraction is a normal outcome, not a failure of the process.</desc>
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#5b6b7f"/></marker>
+<style>
+.b{fill:#fff;stroke:#c6d0da;stroke-width:1.5}
+.h{font:600 14px 'Segoe UI',Arial,sans-serif;fill:#16212e}
+.s{font:12.5px 'Segoe UI',Arial,sans-serif;fill:#5b6b7f}
+.l{font:600 11.5px 'Segoe UI',Arial,sans-serif;fill:#5b6b7f;letter-spacing:.07em}
+.ttl{font:700 18px 'Segoe UI',Arial,sans-serif;fill:#16212e}
+.cap{font:italic 12.5px 'Segoe UI',Arial,sans-serif;fill:#5b6b7f}
+</style></defs>
+<rect width="960" height="450" fill="#f7f9fb"/>
+<text x="40" y="42" class="ttl">Research integrity loop</text>
+<text x="40" y="66" class="cap">An attractive result is a hypothesis about the instrument until something has tried to break it.</text>
+
+<rect x="40" y="104" width="180" height="66" rx="8" class="b"/><text x="130" y="136" class="h" text-anchor="middle">Hypothesis</text><text x="130" y="156" class="s" text-anchor="middle">a claim worth testing</text>
+<rect x="256" y="104" width="180" height="66" rx="8" class="b"/><text x="346" y="136" class="h" text-anchor="middle">Measurement</text><text x="346" y="156" class="s" text-anchor="middle">walk-forward, out of sample</text>
+<rect x="472" y="104" width="200" height="66" rx="8" fill="#fdf9ef" stroke="#d8c48a" stroke-width="1.5"/><text x="572" y="136" class="h" text-anchor="middle">Challenge</text><text x="572" y="156" class="s" text-anchor="middle">break tests, artifact hunt</text>
+<rect x="708" y="104" width="212" height="66" rx="8" fill="#f2f7fc" stroke="#7fa3c9" stroke-width="1.5"/><text x="814" y="136" class="h" text-anchor="middle">Evidence review</text><text x="814" y="156" class="s" text-anchor="middle">does it still hold</text>
+
+<line x1="220" y1="137" x2="248" y2="137" stroke="#5b6b7f" stroke-width="2" marker-end="url(#a)"/>
+<line x1="436" y1="137" x2="464" y2="137" stroke="#5b6b7f" stroke-width="2" marker-end="url(#a)"/>
+<line x1="672" y1="137" x2="700" y2="137" stroke="#5b6b7f" stroke-width="2" marker-end="url(#a)"/>
+
+<path d="M814 170 L814 208" stroke="#5b6b7f" stroke-width="2" fill="none"/>
+<path d="M814 208 L150 208" stroke="#5b6b7f" stroke-width="2" fill="none"/>
+<path d="M150 208 L150 244" stroke="#5b6b7f" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<path d="M480 208 L480 244" stroke="#5b6b7f" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<path d="M810 208 L810 244" stroke="#5b6b7f" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<text x="884" y="200" class="l">OUTCOME</text>
+
+<rect x="60" y="252" width="180" height="70" rx="8" fill="#f1f8f3" stroke="#2f7d4f" stroke-width="1.5"/>
+<text x="150" y="280" class="h" text-anchor="middle" fill="#1f5c39">Retain</text><text x="150" y="302" class="s" text-anchor="middle">survived the challenge</text>
+
+<rect x="390" y="252" width="180" height="70" rx="8" class="b"/>
+<text x="480" y="280" class="h" text-anchor="middle">Revise</text><text x="480" y="302" class="s" text-anchor="middle">re-measure and repeat</text>
+
+<rect x="720" y="252" width="180" height="70" rx="8" fill="#fdf3f0" stroke="#a4442f" stroke-width="1.5"/>
+<text x="810" y="280" class="h" text-anchor="middle" fill="#87351f">Retract</text><text x="810" y="302" class="s" text-anchor="middle">withdraw, do not soften</text>
+
+<path d="M480 322 L480 352 L346 352 L346 180" stroke="#5b6b7f" stroke-width="1.5" fill="none" stroke-dasharray="5 4" marker-end="url(#a)"/>
+<text x="500" y="348" class="s">revision returns to measurement</text>
+
+<rect x="40" y="372" width="880" height="34" rx="8" fill="#fff" stroke="#c6d0da"/>
+<text x="480" y="394" class="s" text-anchor="middle">Retraction is a normal outcome of the loop, not a failure of it. An instrument that cannot retract cannot be trusted when it retains.</text>
+
+<text x="40" y="436" class="cap">Methodology diagram. No performance result is claimed, and backtesting does not predict real market returns.</text>
+</svg>

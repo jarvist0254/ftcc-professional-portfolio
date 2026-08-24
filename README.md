@@ -13,26 +13,47 @@ Security Operations / SOC Analyst (Tier 1) · Junior Cybersecurity Analyst · Pl
 
 ---
 
-## Three projects worth your time
+## Scope of this portfolio
+
+This portfolio spans cybersecurity, systems engineering, local-first AI, distributed systems,
+software products, and research methodology. Each project states what is **publicly demonstrated**,
+what is **implemented** but private, and what remains **unverified**. Where supporting material is
+private, the page says so rather than implying proof that is not offered.
+
+---
+
+## Strongest security proof
 
 ### [Multi-Agent Verification Factory](projects/verification-factory.md)
-A task pipeline built on one rule: an automated worker's report of success is a **claim**, not a fact. A separate deterministic verifier inspects observed system state and issues the only outcome that counts. Insufficient evidence fails closed rather than passing quietly.
+A task pipeline built on one rule: an automated worker's report of success is a **claim**, not a
+fact. A separate deterministic verifier inspects observed system state and issues the only outcome
+that counts, and insufficient evidence fails closed rather than passing quietly.
 
-The design applies separation of duties and independent audit — controls from security practice — to automated work.
+Separation of duties and independent audit — controls from security practice — applied to automated
+work. *Status: Implemented; single-operator, not independently verified.*
 
 ![Verification lifecycle](assets/verification-lifecycle.svg)
 
-### [Security Operations Practice](projects/security-operations.md)
-Graded security-operations coursework — an access-control review, an incident-response case study reconstructed as an event timeline, and a posture assessment against NIST SP 800-53, CIS Controls, and ISO/IEC 27001 — alongside a self-built SOC tooling prototype.
+---
 
-The coursework taught the analyst's decision process. The prototype was an attempt to automate the tedious parts of it.
+## Selected Engineering Work
 
-### [Secure Home Lab and Compute Infrastructure](projects/infrastructure-networking.md)
-A personal network reached through a private device-authorized overlay rather than a forwarded port, so no inbound public service is intentionally exposed. Alongside it, a compute environment that routes work to CPU or GPU by measured crossover behaviour rather than by assumption.
+| Project | What it is |
+|---|---|
+| **[Verification Factory](projects/verification-factory.md)** | A verifier-governed task pipeline where no component certifies its own output and missing evidence fails closed. |
+| **[Security Operations Practice](projects/security-operations.md)** | Graded security-operations coursework — access-control review, an intrusion timeline, a posture assessment — alongside a self-built SOC tooling prototype. |
+| **[Home Lab and Compute Infrastructure](projects/infrastructure-networking.md)** | A personal network reached through a private device-authorized overlay instead of a forwarded port, plus compute routed by measured CPU/GPU crossover. |
+| **[Local-Inference Desktop Platform](projects/local-inference-platform.md)** | A Windows desktop application whose core model inference runs locally on CPU, with no hosted model API in that path. |
+| **[Product Platforms](projects/product-platforms.md)** | Several independently built web and desktop product surfaces, with the API, integration, and cost trade-offs behind them. |
+| **[Distributed Systems](projects/distributed-systems.md)** | A network designed to pay for independently re-checked useful computation rather than hash-based mining. |
+| **[Quantitative Research System](projects/quantitative-research.md)** | A walk-forward research instrument built to find the flaws in its own results, including formal retraction of findings that failed review. |
+| **[Machine-Learning Model Publication](projects/machine-learning-models.md)** | Open model bases, local-first design constraints, and a deliberate line between what is published and what is withheld. |
+| **[Technical Decision Records](projects/technical-decision-records.md)** | Thirteen decisions with the alternatives rejected and what the evidence showed — including where nothing was measured. |
 
-![Network topology](assets/network-topology.svg)
+Status labels used throughout: **Publicly demonstrated** · **Implemented** · **Prototype** ·
+**Research instrument** · **Coursework** · **Available on request**.
 
-Further engineering work is indexed in [projects/](projects/README.md).
+Full index with descriptions: [projects/](projects/README.md)
 
 ---
 

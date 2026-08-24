@@ -1,5 +1,6 @@
 # Local-Inference Desktop Platform
 *A desktop application whose core decision inference runs entirely on local CPU, with no hosted model API in that path — separately disclosed external features aside.*
+**Status:** Implemented — core inference path built and tested; two of the ensemble's model bases are Publicly demonstrated, the rest are not independently verified.
 
 ## Problem
 
@@ -13,7 +14,7 @@ A Windows desktop application whose decision layer is a nine-model gradient-boos
 
 A locally shipped model still needs licensing, updates, and payment, so I built a separate hosted backend — a licensing and commerce service (Python/FastAPI, PostgreSQL) on a container platform, integrated with a payment provider. The client caches a signed license locally, so short outages don't stop it from working.
 
-Two of the ensemble's model bases are published publicly under an open license; a third, larger model has been announced but not yet published. A test-enforced promotion policy authorizes only three of the nine for the highest-consequence code path, the one that can act on the user's behalf — checked in code, not decided by hand.
+Two of the ensemble's model bases are published publicly under an open license (**Publicly demonstrated**); a third, larger model has been announced but not yet published (**Prototype**, unreleased). A test-enforced promotion policy authorizes only three of the nine for the highest-consequence code path, the one that can act on the user's behalf — checked in code, not decided by hand.
 
 **Disclosed external data paths, separate from core inference:** stored credentials are encrypted at rest using the OS's native credential-protection facilities. Licensing and commerce run through the hosted backend above. An optional feature lets a user send selected context to a third-party AI service of their choice — before it leaves the machine, a recursive redaction pass strips sensitive identifiers out, including ones nested inside larger structures. The application also integrates with several brokerage APIs to place, size, and exit trades within user-configured limits.
 
@@ -27,7 +28,7 @@ Two of the ensemble's model bases are published publicly under an open license; 
 
 **Recursive redaction before any third-party API call.** Anything sent to an external model's API should be assumed to be logged by someone else. Rather than trust a caller to scrub sensitive fields, the redaction pass walks the full structure, nested fields included, before transmission.
 
-## Public proof or evidence available
+## Publicly demonstrated / evidence available
 
 **Publicly verifiable now:** the two published model bases, including their architecture, are public under an open license — a reader can inspect them directly.
 
@@ -40,3 +41,10 @@ The project demonstrates that a decision-support application can run its core in
 ## Honest scope boundary
 
 No trading-performance results are published or claimed here. Purchases and downloads are currently paused, so the product is not commercially active. Only Windows is shipped; macOS and Linux builds don't exist. An internal review found a number of defects, mostly low severity and outside the highest-consequence path; none were reported reachable through the promotion-gated path. No third-party security audit has occurred, and this is a single-developer project with no external code review process.
+
+## Related work
+
+- [Machine learning models](machine-learning-models.md) — the published model bases referenced above, with more detail on their architecture and training.
+- [Quantitative research](quantitative-research.md) — the broader research process the ensemble's models came out of.
+- [Product platforms](product-platforms.md) — how this application's licensing, commerce, and delivery lifecycle fits the rest of the product work in this portfolio.
+- [Technical decision records](technical-decision-records.md) — the fuller record of judgment calls behind this and other projects, including ones that did not make this page.

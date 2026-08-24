@@ -1,5 +1,6 @@
 # Multi-Agent Verification Factory
 *An orchestration system that treats an automated worker's report of success as a claim to be checked, not a fact.*
+**Status:** Implemented — built and tested by a single operator; never independently reviewed or audited.
 
 ## Problem
 
@@ -25,7 +26,7 @@ A three-role task pipeline where no single actor certifies its own work. A manag
 
 The organizing idea — the actor performing work and the actor attesting to it must be different — is separation of duties and independent audit, security-control principles applied here to automated software work.
 
-## Public proof or evidence available
+## Publicly demonstrated / evidence available
 
 **Publicly verifiable now:** the diagram above, showing the fail-closed lifecycle and the separation between worker output and verdict, is in this repository for anyone to inspect directly.
 
@@ -37,4 +38,10 @@ On real task volume, not a designed benchmark, independent verification caught a
 
 ## Honest scope boundary
 
-This is a single-operator system, never independently reviewed. The verifier itself has never been audited by anyone but me — it verifies workers, but nothing verifies it. There is no formal latency or throughput measurement. Adaptive routing that shifts allocation automatically as a lane's error rate moves is designed, not implemented; routing is revised from historical batches by hand. Some lane statistics, especially for lower-volume lanes, rest on small samples and should be read as directional, not conclusive.
+This is a single-operator system, never independently reviewed. The verifier itself has never been audited by anyone but me — it verifies workers, but nothing verifies it. There is no formal latency or throughput measurement. Adaptive routing that shifts allocation automatically as a lane's error rate moves is designed, not implemented (**Prototype**, on paper only); routing is revised from historical batches by hand. Some lane statistics, especially for lower-volume lanes, rest on small samples and should be read as directional, not conclusive.
+
+## Related work
+
+- [Distributed systems](distributed-systems.md) — the broader pattern of independent validation before a result is allowed to settle, applied outside this specific pipeline.
+- [Security operations](security-operations.md) — the same separation-of-duties principle, applied to intrusion analysis and access governance instead of automated task claims.
+- [Technical decision records](technical-decision-records.md) — the fuller record of judgment calls behind this and other projects, including ones that did not make this page.
