@@ -67,7 +67,7 @@ them to be discovered.
 
 I am looking for an entry-level position in security operations or platform security where careful
 verification is treated as part of the work rather than an afterthought. I am reachable at
-[add professional email before publishing] and on LinkedIn at [add LinkedIn URL before publishing].
+thomasjarvis2026@gmail.com and on LinkedIn at https://www.linkedin.com/in/thomas-jarvis-0453716b.
 
 ## ▲ COPY TO HERE ▲
 
@@ -91,8 +91,8 @@ Work through these in order. Do not skip step 3.
 
 ## Before you paste
 
-- [ ] Professional email inserted in both places
-- [ ] LinkedIn URL inserted
+- [x] Professional email inserted
+- [x] LinkedIn URL inserted
 - [x] Repository published and public
 - [ ] `REVIEW_CHECKLIST.md` completed
 - [ ] All four GitHub links opened in incognito and confirmed loading

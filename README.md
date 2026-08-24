@@ -52,11 +52,11 @@ Further engineering work is indexed in [projects/](projects/README.md).
 
 ## Certifications
 
-| Certification | Issuer | Status |
+| Certification | Issuer | Verify |
 |---|---|---|
-| CompTIA Security+ | CompTIA | Held — *verification link pending* |
-| CompTIA Network+ | CompTIA | Held — *verification link pending* |
-| CompTIA A+ | CompTIA | Held — *verification link pending* |
+| CompTIA Security+ (ce) | CompTIA | [Verify on Credly](https://www.credly.com/badges/1d0d7bea-94cc-49a7-9072-dc84543fafc3/public_url) |
+| CompTIA Network+ (ce) | CompTIA | [Verify on Credly](https://www.credly.com/badges/1f67330f-d702-453f-8f78-110b86615fe6/public_url) |
+| CompTIA A+ (ce) | CompTIA | [Verify on Credly](https://www.credly.com/badges/6c466800-d6fe-4ae8-9a4d-02b0389ad2b8/public_url) |
 
 ## Education
 
@@ -100,8 +100,8 @@ I would rather you know that from the page than discover it in an interview.
 
 ## Contact
 
-- **Email:** `[add professional email before publishing]`
-- **LinkedIn:** `[add LinkedIn URL before publishing]`
+- **Email:** thomasjarvis2026@gmail.com
+- **LinkedIn:** https://www.linkedin.com/in/thomas-jarvis-0453716b
 - **GitHub:** https://github.com/jarvist0254/ftcc-professional-portfolio
 
 *Available for junior security roles — remote, or in the Fayetteville and Raleigh area.*

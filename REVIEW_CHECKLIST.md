@@ -191,7 +191,7 @@ grep -rniE 'military|veteran|\bwgu\b|western governors|b\.s\.|bachelor|graduated
 - [ ] Every "live" / "deployed" / "published" claim in the repo either links to a working public
       URL, or has been reworded to past tense / "deployment status not independently verified."
 - [ ] No certification is printed with a date or a credential ID. Each certification claim reads
-      "verification link pending" or equivalent, and lists only the credential name.
+      a working public verification link (Credly), or is marked pending if no link exists yet.
 - [ ] No invented credential date or ID appears anywhere (a date or ID that cannot be verified
       against the real credential).
 
