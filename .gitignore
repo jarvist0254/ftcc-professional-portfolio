@@ -1,0 +1,140 @@
+# ============================================================
+# PURPOSE OF THIS FILE
+# ============================================================
+# This .gitignore is the first line of defense for a PUBLIC repository. It
+# excludes local secrets, raw evidence, coursework, transcripts, capture
+# files, and machine-identifying local state so they can never be staged
+# by accident.
+#
+# THIS FILE MUST EXIST, COMMITTED, BEFORE THE FIRST COMMIT of this
+# repository. If `git init` / the first `git add` happens before this file
+# is in place, anything matching the patterns below may already be tracked
+# in history — see REVIEW_CHECKLIST.md section 5 ("deleting a file later
+# does not remove it from git history").
+#
+# See REVIEW_CHECKLIST.md before every push — this file prevents accidental
+# staging, it does not replace the manual review.
+# ============================================================
+
+# ============================================================
+# Environment / secrets — never commit real credentials
+# ============================================================
+.env
+.env.*
+*.env
+.env.local
+.env.production
+
+# ============================================================
+# Credentials, keys, tokens
+# ============================================================
+*.key
+*.pem
+id_rsa*
+id_ed25519*
+*credentials*
+*secret*
+*secrets*
+*token*
+*.p12
+*.pfx
+service-account*.json
+.aws/
+.ssh/
+*.kdbx
+
+# ============================================================
+# Archives — should never ship raw bulk content into a public repo
+# ============================================================
+*.zip
+*.7z
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+
+# ============================================================
+# Raw evidence dossiers — summarized in evidence/README.md only,
+# the underlying material is never committed
+# ============================================================
+appendix/
+*dossier*
+evidence_dossiers/
+*_dossiers/
+
+# ============================================================
+# Transcripts and data exports — may contain personal/system identifiers
+# ============================================================
+*transcript*
+*conversations*.json
+*export*.zip
+*.jsonl
+
+# ============================================================
+# Course material — graded/licensed content, not for redistribution
+# ============================================================
+coursework/
+*.pka
+*.pkt
+*.docx
+*.pptx
+
+# ============================================================
+# Documents that may carry personal data
+# ============================================================
+*resume*.pdf
+*transcript*.pdf
+
+# ============================================================
+# Local scratch / build artifacts
+# ============================================================
+.venv/
+__pycache__/
+node_modules/
+*.log
+.DS_Store
+Thumbs.db
+*.bak
+*.tmp
+
+# ============================================================
+# Unsanitized screenshots — only redacted images belong in screenshots/
+# ============================================================
+screenshots/raw/
+
+# ============================================================
+# Capture and data files — a security portfolio leaks most easily here.
+# Packet captures and browser archives contain real traffic, hostnames,
+# cookies, and sometimes credentials in cleartext.
+# ============================================================
+*.pcap
+*.pcapng
+*.har
+*.cap
+*.evtx
+*.csv
+*.sqlite
+*.sqlite3
+*.db
+
+# ============================================================
+# Editor / IDE state — leaks local paths and recent-file lists
+# ============================================================
+.vscode/
+.idea/
+*.iml
+*.code-workspace
+
+# ============================================================
+# Evidence directory is allowlisted, not blocklisted.
+# Only the index and redacted screenshots may be committed; anything
+# else placed here is ignored by default so an accidental drop-in
+# cannot be staged without a deliberate override.
+# ============================================================
+evidence/*
+!evidence/README.md
+!evidence/screenshots/
+evidence/screenshots/*
+!evidence/screenshots/*.png
+!evidence/screenshots/*.jpg
+!evidence/screenshots/*.svg

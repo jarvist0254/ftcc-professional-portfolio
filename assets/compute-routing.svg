@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" width="960" height="480" role="img" aria-labelledby="t d">
+<title id="t">Measured CPU and GPU routing</title>
+<desc id="d">Work is routed to CPU or GPU according to measured crossover behaviour rather than an assumption. Below the measured crossover point the CPU path is faster and the GPU is left idle. Above it, suitable larger workloads are routed to the GPU. The crossover is measured per workload.</desc>
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#5b6b7f"/></marker>
+<style>
+.b{fill:#fff;stroke:#c6d0da;stroke-width:1.5}
+.h{font:600 14px 'Segoe UI',Arial,sans-serif;fill:#16212e}
+.s{font:12.5px 'Segoe UI',Arial,sans-serif;fill:#5b6b7f}
+.l{font:600 11.5px 'Segoe UI',Arial,sans-serif;fill:#5b6b7f;letter-spacing:.06em}
+.ttl{font:700 18px 'Segoe UI',Arial,sans-serif;fill:#16212e}
+.cap{font:italic 12.5px 'Segoe UI',Arial,sans-serif;fill:#5b6b7f}
+.ax{stroke:#8b98a5;stroke-width:1.5}
+</style></defs>
+<rect width="960" height="480" fill="#f7f9fb"/>
+<text x="40" y="42" class="ttl">Routing work to CPU or GPU</text>
+<text x="40" y="66" class="cap">The crossover point is measured per workload, not assumed.</text>
+
+<rect x="40" y="100" width="180" height="64" rx="8" class="b"/>
+<text x="130" y="128" class="h" text-anchor="middle">Incoming work</text>
+<text x="130" y="148" class="s" text-anchor="middle">varying batch size</text>
+
+<rect x="280" y="100" width="200" height="64" rx="8" fill="#f2f7fc" stroke="#7fa3c9" stroke-width="1.5"/>
+<text x="380" y="128" class="h" text-anchor="middle">Compare with</text>
+<text x="380" y="148" class="h" text-anchor="middle">measured crossover</text>
+
+<line x1="220" y1="132" x2="272" y2="132" class="ax" marker-end="url(#a)"/>
+
+<rect x="560" y="72" width="360" height="56" rx="8" fill="#fff" stroke="#c6d0da" stroke-width="1.5"/>
+<text x="582" y="97" class="h">Below crossover → CPU path</text>
+<text x="582" y="117" class="s">GPU is left idle because it is slower here</text>
+
+<rect x="560" y="144" width="360" height="56" rx="8" fill="#f1f8f3" stroke="#2f7d4f" stroke-width="1.5"/>
+<text x="582" y="169" class="h" fill="#1f5c39">Above crossover → GPU path</text>
+<text x="582" y="189" class="s">for suitable larger workloads only</text>
+
+<path d="M480 122 L520 122 L520 100 L552 100" class="ax" fill="none" marker-end="url(#a)"/>
+<path d="M480 142 L520 142 L520 172 L552 172" class="ax" fill="none" marker-end="url(#a)"/>
+
+<line x1="120" y1="400" x2="880" y2="400" class="ax"/>
+<line x1="120" y1="400" x2="120" y2="248" class="ax"/>
+<text x="500" y="436" class="l" text-anchor="middle">WORKLOAD SIZE →</text>
+<text x="96" y="330" class="l" text-anchor="middle" transform="rotate(-90 96 330)">TIME TAKEN →</text>
+
+<path d="M140 300 L860 268" stroke="#5b6b7f" stroke-width="2.5" fill="none"/>
+<path d="M140 372 L860 300" stroke="#2f7d4f" stroke-width="2.5" fill="none" stroke-dasharray="7 4"/>
+
+<text x="180" y="288" class="s" fill="#16212e">CPU path</text>
+<text x="180" y="392" class="s" fill="#1f5c39">GPU path</text>
+
+<line x1="470" y1="248" x2="470" y2="400" stroke="#a4442f" stroke-width="1.5" stroke-dasharray="5 4"/>
+<circle cx="470" cy="285" r="5" fill="#a4442f"/>
+<text x="484" y="268" class="l" fill="#87351f">MEASURED CROSSOVER</text>
+<text x="484" y="376" class="s">left of this line the CPU wins</text>
+
+<text x="40" y="466" class="cap">Illustrative shape only — no absolute throughput figures are claimed. The GPU is not faster in every case.</text>
+</svg>

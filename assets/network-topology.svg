@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" width="960" height="520" role="img" aria-labelledby="t d">
+<title id="t">Remote access: port forwarding compared with a device-authorized overlay</title>
+<desc id="d">Two approaches to reaching a workstation remotely. On the left, a forwarded port publishes a service to the internet where it is reachable by anyone. On the right, devices join a private authorized overlay and no inbound public service is intentionally exposed.</desc>
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#5b6b7f"/></marker>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#a4442f"/></marker>
+<style>
+.b{fill:#fff;stroke:#c6d0da;stroke-width:1.5}
+.h{font:600 14px 'Segoe UI',Arial,sans-serif;fill:#16212e}
+.s{font:12.5px 'Segoe UI',Arial,sans-serif;fill:#5b6b7f}
+.l{font:600 11.5px 'Segoe UI',Arial,sans-serif;letter-spacing:.06em}
+.ttl{font:700 18px 'Segoe UI',Arial,sans-serif;fill:#16212e}
+.ph{font:700 15px 'Segoe UI',Arial,sans-serif}
+.cap{font:italic 12.5px 'Segoe UI',Arial,sans-serif;fill:#5b6b7f}
+</style></defs>
+<rect width="960" height="520" fill="#f7f9fb"/>
+<text x="40" y="42" class="ttl">Remote access to a personal workstation</text>
+<text x="40" y="66" class="cap">Two ways to reach the same machine. Only one publishes a service to the internet.</text>
+
+<rect x="40" y="92" width="420" height="368" rx="10" fill="#fdf6f4" stroke="#e0b6aa" stroke-width="1.5"/>
+<text x="64" y="122" class="ph" fill="#87351f">Port forwarding</text>
+<text x="64" y="144" class="s">The common approach. Not used here.</text>
+
+<rect x="64" y="168" width="120" height="56" rx="8" class="b"/><text x="124" y="196" class="h" text-anchor="middle">Internet</text><text x="124" y="214" class="s" text-anchor="middle">anyone</text>
+<rect x="240" y="168" width="120" height="56" rx="8" class="b"/><text x="300" y="196" class="h" text-anchor="middle">Router</text><text x="300" y="214" class="s" text-anchor="middle">forwarded port</text>
+<rect x="152" y="286" width="152" height="56" rx="8" class="b"/><text x="228" y="314" class="h" text-anchor="middle">Workstation</text><text x="228" y="332" class="s" text-anchor="middle">service listening</text>
+
+<line x1="184" y1="196" x2="232" y2="196" stroke="#a4442f" stroke-width="2" marker-end="url(#ar)"/>
+<path d="M300 224 L300 262 L232 262 L232 278" stroke="#a4442f" stroke-width="2" fill="none" marker-end="url(#ar)"/>
+<text x="64" y="380" class="l" fill="#87351f">CONSEQUENCE</text>
+<text x="64" y="404" class="s">An authentication surface is published to the internet</text>
+<text x="64" y="424" class="s">and is reachable, and scanned, continuously.</text>
+<text x="64" y="446" class="s">Its safety depends entirely on hardening it.</text>
+
+<rect x="500" y="92" width="420" height="368" rx="10" fill="#f2f8f4" stroke="#9dc3ac" stroke-width="1.5"/>
+<text x="524" y="122" class="ph" fill="#1f5c39">Device-authorized overlay</text>
+<text x="524" y="144" class="s">The approach used in this architecture.</text>
+
+<rect x="524" y="168" width="104" height="52" rx="8" class="b"/><text x="576" y="199" class="h" text-anchor="middle">Phone</text>
+<rect x="648" y="168" width="104" height="52" rx="8" class="b"/><text x="700" y="199" class="h" text-anchor="middle">Tablet</text>
+<rect x="772" y="168" width="120" height="52" rx="8" class="b"/><text x="832" y="199" class="h" text-anchor="middle">Workstation</text>
+
+<rect x="524" y="256" width="368" height="60" rx="8" fill="#fff" stroke="#2f7d4f" stroke-width="1.5" stroke-dasharray="5 3"/>
+<text x="708" y="282" class="h" text-anchor="middle" fill="#1f5c39">Private authorized overlay</text>
+<text x="708" y="302" class="s" text-anchor="middle">each device individually authorized</text>
+
+<line x1="576" y1="220" x2="576" y2="248" stroke="#2f7d4f" stroke-width="2"/>
+<line x1="700" y1="220" x2="700" y2="248" stroke="#2f7d4f" stroke-width="2"/>
+<line x1="832" y1="220" x2="832" y2="248" stroke="#2f7d4f" stroke-width="2"/>
+
+<rect x="524" y="336" width="368" height="44" rx="8" fill="#fff" stroke="#c6d0da"/>
+<text x="708" y="363" class="h" text-anchor="middle">Internet — no inbound service published</text>
+
+<text x="524" y="410" class="l" fill="#1f5c39">CONSEQUENCE</text>
+<text x="524" y="434" class="s">No inbound public service is intentionally exposed,</text>
+<text x="524" y="454" class="s">so there is no public login surface to harden.</text>
+
+<text x="40" y="494" class="cap">Generic illustration of a personal setup. Not an enterprise design, and not a claim of zero attack surface.</text>
+</svg>
