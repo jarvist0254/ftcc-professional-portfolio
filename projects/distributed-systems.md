@@ -19,6 +19,8 @@ A task marketplace and reward system implemented as smart contracts in Rust usin
 
 A desktop compute client lets a worker contribute GPU capacity and receive rewards through non-custodial wallet integration: the platform never holds a worker's funds; rewards go directly to a wallet the worker controls.
 
+![Independently validated computation flow](../assets/distributed-systems.svg)
+
 ## Technical decisions
 
 **A custom useful-work consensus mechanism instead of plain stake-weighted validation.** Proof-of-stake secures a chain but ties nothing to any external output. Tying rewards to re-checked computation keeps the "pays for something real" property proof-of-work has and stake-only consensus does not.
