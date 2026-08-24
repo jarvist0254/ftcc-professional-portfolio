@@ -126,15 +126,15 @@ Anyone can list what they chose. The more useful record is what was rejected, an
 
 ## 11. A lean container platform over a heavier managed cloud stack, by workload
 
-**Decision.** Hosted services split across two platforms by complexity: a heavier managed cloud stack for one complex, stateful workload, a leaner container platform for simpler, stateless services.
+**Decision.** Hosted services split across two platforms I have actually deployed and operated on, by workload complexity: a heavier managed cloud stack for one complex, stateful workload, a leaner container platform for simpler, stateless services.
 
 **Alternatives considered.** Standardizing on the heavier stack; migrating everything to the leaner platform; a single self-managed server for all services.
 
-**Why this choice.** The heavier stack's managed state and tooling earn their overhead on the one workload that needs them; simpler services don't need that machinery.
+**Why this choice.** The heavier stack's managed state and tooling earn their overhead on the one workload that needs them; simpler services don't need that machinery. That trade-off is credible because both sides of it were built and run, not compared from documentation. The heavier stack carried a multi-service footprint — serverless compute, managed NoSQL and relational data, a CDN, DNS, object storage, queueing, and pub/sub. The leaner platform now runs four services, each sized to its own workload rather than a shared default, with scale-to-zero applied where the traffic pattern allows it.
 
 **What the evidence showed.** Not published here as a verified figure — cost comparisons informed the internal reasoning but are not stated as verified facts on this page.
 
-**Boundary.** Both platforms remain in active use for different services. This is a workload-matched split, not a migration away from either.
+**Boundary.** Both platforms remain in active use for different services. This is a workload-matched split between two platforms actually operated, not a migration away from either, and not a claim about which is cheaper without the unpublished cost figures.
 
 ## 12. Retracting invalid research findings over preserving attractive results
 

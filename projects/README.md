@@ -8,6 +8,7 @@ honest scope boundary.
 
 | Label | Meaning |
 |---|---|
+| **Deployed and operated** | Provisioned, deployed, and run on a real cloud or container platform — infrastructure that existed and served traffic, distinct from a build that only ran locally |
 | **Publicly demonstrated** | A public repository, URL, release, or sanitized artifact in this repository supports it |
 | **Implemented** | Built and tested, but not publicly deployed or independently verified |
 | **Prototype** | Partially built or experimental |

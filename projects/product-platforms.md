@@ -1,7 +1,7 @@
 # Product Platforms
 *Multiple independently built web and desktop product surfaces, and the architecture and cost trade-offs behind them.*
 
-**Status:** Mixed — one product line retired, the rest implemented and previously operated at beta/alpha status. Current public availability is not asserted on this page.
+**Status:** Mixed — one product line retired; the container-platform services are **deployed and operated**; the rest is implemented and previously operated at beta/alpha status. Current public availability beyond the deployment configuration itself is not independently confirmed on this page.
 
 ## Problem
 
@@ -23,13 +23,15 @@ Across the newer products: Python/FastAPI services, mostly fronted by a managed 
 
 ![Product platform shape](../assets/product-platforms.svg)
 
-I am not asserting any of these is currently live as of this writing. Status moves between paused, beta, and retired over time, and I have not independently re-verified it here — ask me directly rather than trusting anything implied on this page.
+**The container platform underneath the newer services — deployed and operated, not a prototype.** Four distinct service configurations run on a single lightweight container platform, one per product: a lead-capture backend, a commerce/licensing backend, a contractor service API, and a front-end service. All four force HTTPS, run in a single primary region, and use autostart/autostop machines; two are configured always-on (`min_machines_running = 1`) and two scale to zero between requests. VM sizing ranges from 256 MB up to 2 GB depending on the service, and each builds from its own Dockerfile. Live running state was not independently re-confirmed while writing this page (see the scope boundary below), and app names and hostnames are not published.
+
+For everything else on this page: I am not asserting any product is currently live as of this writing beyond the container-platform point above. Status moves between paused, beta, and retired over time, and I have not independently re-verified it here — ask me directly rather than trusting anything implied on this page.
 
 ## Technical decisions
 
 **Static delivery on an edge platform instead of a server-rendered app for pages with no per-request logic.** Marketing pages don't change per visitor; running an origin server to render identical content adds cost with no benefit, so those went to an edge/CDN platform with zero-config deploys.
 
-**A lightweight container platform for the newer, simpler backends, instead of the heavier managed stack used for the oldest one.** The retired e-commerce platform ran on a fuller managed cloud stack — load-balanced compute, a managed database with failover, a managed cache, a web application firewall — because it carried real stateful, multi-service complexity. The newer, simpler services don't need that, so they run leaner. Both were kept: workload fit, not a verdict that the heavier stack was wrong.
+**A lightweight container platform for the newer, simpler backends, instead of the heavier managed cloud stack used for the oldest one.** The retired e-commerce platform ran on a fuller managed cloud stack — load-balanced compute, a managed database with failover, a managed cache, a web application firewall — because it carried real stateful, multi-service complexity. The newer, simpler services don't need that, so they run leaner on the container platform described above instead. This is a choice between two kinds of platform I have actually deployed and operated on, not a stated preference for one I haven't used — AWS elsewhere in this portfolio (see [Distributed Systems](distributed-systems.md)) and the container platform here: workload fit, not a verdict that the heavier stack was wrong.
 
 **A shared backend module reused across products, instead of writing each backend from zero.** Auth handling, third-party API routing with fallback, and caching were extracted once and reused. The trade-off is coupling, accepted to avoid re-solving the same plumbing repeatedly.
 
@@ -49,7 +51,7 @@ The result is a working pattern for standing up a service-business product cheap
 
 ## Honest scope boundary
 
-I am not claiming any product here is currently live, in active production use, or has paying customers, active subscriptions, or a verified adoption number. No third-party security audit or compliance certification has been performed on any of these systems. At least one dashboard product's deployment status has, at points, been internally ambiguous between "built and running locally" and "deployed publicly" — I am not resolving that here by asserting a status I have not re-verified. The infrastructure cost figures are directional, not audited financials. Current availability of any product named above should be confirmed directly with me, not assumed from this page.
+Deployed and operated on the container platform is a claim about infrastructure and configuration, asserted by me as the operator and consistent with what's on disk — the CLI on this machine is not currently authenticated to that account, so I could not independently re-confirm live running state, and I am not claiming a verified live URL, uptime, or traffic figure for it. Beyond that specific point, I am not claiming any product here is in active production use, or has revenue, paying customers, active subscriptions, or a verified adoption number. No third-party security audit or compliance certification has been performed on any of these systems. At least one dashboard product's deployment status has, at points, been internally ambiguous between "built and running locally" and "deployed publicly" — I am not resolving that here by asserting a status I have not re-verified. The infrastructure cost figures are directional, not audited financials. Current availability of any product named above should be confirmed directly with me, not assumed from this page.
 
 ## Related work
 

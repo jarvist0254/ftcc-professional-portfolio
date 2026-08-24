@@ -1,7 +1,7 @@
 # Distributed Systems
 *A blockchain network designed to pay for verifiable useful computation rather than for hash-based mining.*
 
-**Status:** Implemented — the architecture is designed and built end to end. Independently verified public operation is a separate thing and is not claimed on this page.
+**Status:** Implemented; the off-chain AWS backend is **deployed and operated**, not a prototype. Independently verified public operation of the on-chain side is a separate thing and is not claimed on this page.
 
 ## Problem
 
@@ -11,13 +11,31 @@ That reframing runs into a hard problem: if a worker gets paid for computation d
 
 ## What I built
 
-A task marketplace and reward system implemented as smart contracts in Rust using the Anchor framework on a high-throughput chain: a job marketplace (creation, bidding, escrow, settlement), a reward distribution program, a validator registry, an escrow/vault mechanism holding funds until a job is confirmed, and governance primitives for parameter changes. Off-chain, a serverless backend pattern coordinates job intake and status: managed functions handle request-scoped logic, a NoSQL table layer holds job, worker, and consensus records, and an API orchestration layer exposes endpoints to clients and the desktop client below.
+A task marketplace and reward system implemented as smart contracts in Rust using the Anchor framework on a high-throughput chain: a job marketplace (creation, bidding, escrow, settlement), a reward distribution program, a validator registry, an escrow/vault mechanism holding funds until a job is confirmed, and governance primitives for parameter changes. Off-chain, a serverless backend pattern coordinates job intake and status: managed functions handle request-scoped logic, a NoSQL table layer holds job, worker, and consensus records, and an API orchestration layer exposes endpoints to clients and the desktop client below. A multi-queue asynchronous architecture (separate job, payment, and result queues) decouples intake, execution, and settlement, so a slow validator round or payment step does not block new job intake.
 
 **The core design idea — Proof of Useful AI Work.** A client submits a computation job. A worker executes it and submits a result with a proof artifact. Rather than accept that result on the worker's say-so, an independent panel of validators re-checks it, and only when enough agree does the result settle on-chain and the reward release. A worker's own report that it "did the work correctly" is a claim, not evidence.
 
 **Why that verification step is hard, not incidental.** Re-running every job on every validator would prove correctness, but it throws away the economic point of outsourcing computation — you'd pay N times over to avoid trusting one worker. The alternative, a smaller validator panel independently reproducing results and requiring threshold agreement before anything settles, buys back most of the cost savings at the price of a probabilistic rather than absolute guarantee. Getting the incentives right so a colluding minority can't cheaply force a false result through is the real engineering problem here — designed and implemented, not formally verified.
 
 A desktop compute client lets a worker contribute GPU capacity and receive rewards through non-custodial wallet integration: the platform never holds a worker's funds; rewards go directly to a wallet the worker controls.
+
+**AWS footprint — deployed and operated.** The off-chain side above is not a diagram of intent; it is a real multi-service AWS account, confirmed from an infrastructure export of that account (organised by service, not from project documentation):
+
+| Service | Verified from export |
+|---|---|
+| Lambda | 40 functions (nodejs18.x, nodejs20.x) |
+| DynamoDB | 26 tables (job, consensus, escrow, rewards, payments, audit-log, compliance domains) |
+| API Gateway | REST API with resources and a deployed stage |
+| CloudFront | 4 distributions (one fronting a load balancer) |
+| S3 | 10 buckets |
+| Route 53 | hosted zone, 13 DNS records (A, CNAME, MX, NS, SOA, TXT) |
+| EC2 | 1 instance, t3.medium |
+| RDS | 1 PostgreSQL instance |
+| SQS | 3 queues (job, payment, result) |
+| SNS | 4 topics (alerts, compliance, airdrop notifications) |
+| EventBridge | scheduled/event rules |
+
+The Lambda count in particular has moved around in earlier drafts of this portfolio, citing 20, 26, and 37 in different places — those were guesses from project documentation. The account export itself lists 40 functions; that is the number to use.
 
 ![Independently validated computation flow](../assets/distributed-systems.svg)
 
@@ -35,9 +53,9 @@ A desktop compute client lets a worker contribute GPU capacity and receive rewar
 
 ## Publicly demonstrated / evidence available
 
-**Publicly verifiable now:** the diagram above, showing the job → worker → validator-panel → settlement flow in generic form, is in this repository for direct inspection. No repository link, block-explorer link, or live endpoint is asserted as current, verified evidence here.
+**Publicly verifiable now:** the diagram above, showing the job → worker → validator-panel → settlement flow in generic form, is in this repository for direct inspection. The service inventory table above states counts, not identifiers (see the scope boundary below for what is not published).
 
-**Available only on request, not independently verifiable here:** the smart contract source, the validator-consensus implementation, the architecture documentation, and the desktop client.
+**Available only on request, not independently verifiable here:** the account-level infrastructure export itself, the smart contract source, the validator-consensus implementation, the architecture documentation, and the desktop client.
 
 ## Outcome
 
@@ -45,7 +63,7 @@ The project demonstrates a working design and implementation of a consensus mech
 
 ## Honest scope boundary
 
-No third-party smart-contract audit has been performed. No regulatory approval, registration, or compliance status is claimed. I am not claiming verified adoption, transaction volume, profitability, token value, current exchange or listing status, or sustained real-world throughput. The architecture is documented and implemented; independently verified public operation is a separate claim I am not making. No wallet addresses, mint addresses, token identifiers, contract addresses, API endpoints, or deployment dates are published here.
+No third-party smart-contract audit has been performed, and no regulatory approval, registration, or compliance status is claimed. I am not claiming verified adoption, transaction volume, profitability, token value, current exchange or listing status, or sustained real-world throughput. Deploying and operating the AWS infrastructure is not the same claim as commercial success: the account export establishes that the services above exist and are configured, not that the product has users, revenue, or volume, and independently verified public operation of the on-chain side is a separate claim I am not making. No wallet addresses, mint addresses, token identifiers, contract addresses, account IDs, ARNs, bucket names, function names, domains, DNS values, API endpoints, or deployment dates are published here.
 
 ## Related work
 

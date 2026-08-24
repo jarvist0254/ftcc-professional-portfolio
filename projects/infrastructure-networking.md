@@ -1,7 +1,7 @@
 # Secure Home Lab and Compute Infrastructure
 
 *A private-overlay network and a measured CPU/GPU compute environment, built to run everything else in this portfolio.*
-**Status:** Implemented — built and in personal use; router/switch and cloud-platform work is coursework, not production deployment.
+**Status:** Implemented — built and in personal use; router/switch labs and Azure/Google Cloud platform work are coursework, not production deployment. (Cloud deployment and operations experience does exist elsewhere in this portfolio, on AWS and a container platform — see [Distributed Systems](distributed-systems.md) and [Product Platforms](product-platforms.md).)
 
 ## Problem
 
@@ -11,7 +11,7 @@ Separately, the machine-learning and simulation work elsewhere in this portfolio
 
 ## What I built
 
-A private mesh overlay network joins the workstation and my mobile devices, each authorized individually rather than through a shared credential; no service on the workstation intentionally listens on a public port. A compute layer runs a pool of CPU workers alongside GPU-accelerated scoring under Linux on Windows, with work routed to CPU or GPU by measured per-workload throughput crossover points rather than a fixed preference. A four-tier storage layout assigns drives to roles by measured write-durability latency. Separately, I completed 22 router and switch simulation labs covering OSPF, EIGRP, access control lists, and NAT (**Coursework**), and I am partway through cloud-platform coursework and tooling setup for Azure and Google Cloud (**Coursework**, in progress).
+A private mesh overlay network joins the workstation and my mobile devices, each authorized individually rather than through a shared credential; no service on the workstation intentionally listens on a public port. A compute layer runs a pool of CPU workers alongside GPU-accelerated scoring under Linux on Windows, with work routed to CPU or GPU by measured per-workload throughput crossover points rather than a fixed preference. A four-tier storage layout assigns drives to roles by measured write-durability latency. Separately, I completed 22 router and switch simulation labs covering OSPF, EIGRP, access control lists, and NAT (**Coursework**), and I am partway through cloud-platform coursework and tooling setup for Azure and Google Cloud (**Coursework**, in progress) — Azure and GCP remain tooling familiarity only, with no resources deployed on either. That is distinct from AWS and the container platform, where I have deployed and operate real services (see [Distributed Systems](distributed-systems.md) and [Product Platforms](product-platforms.md)).
 
 ![Network topology](../assets/network-topology.svg)
 ![Compute routing](../assets/compute-routing.svg)
@@ -26,7 +26,7 @@ A private mesh overlay network joins the workstation and my mobile devices, each
 
 **Storage tiers by measured latency, not nameplate spec.** I assigned drives to roles (active work vs. archive) by measured write-commit latency rather than trusting rated specifications, and set a rule that live computation never targets an archive-tier drive.
 
-**Retracting an unverified figure.** An earlier note claimed roughly a 5% overall speedup from the GPU work. This was an arithmetic error: an optimized compute phase was divided into a wall-clock total dominated by unrelated steps it did not touch. I traced the error and withdrew the claim.
+**Retracting an unverified figure.** An earlier note claimed roughly a 5% overall speedup from the GPU work. This was an arithmetic error: an optimized compute phase was divided into a wall-clock total dominated by unrelated steps it did not touch. I traced the error and withdrew the claim — the same deliberate mark-invalid-before-replacing discipline used for research findings elsewhere in this portfolio (see [Quantitative Research](quantitative-research.md)), not a one-off correction.
 
 ## Publicly demonstrated / evidence available
 
@@ -40,7 +40,7 @@ The result is a workstation reachable from mobile devices with no intentionally 
 
 ## Honest scope boundary
 
-This is a single-user home network, not an enterprise deployment, and it has no production change-control process. No infrastructure has been deployed on Azure or Google Cloud; that work is coursework and tooling familiarity only. The routing and switching work is simulation-lab coursework, not configuration of production hardware. The benchmark figures cited above come from single-workload samples on one machine, not from broad or repeated benchmarking, and are stated with that limitation each time.
+This is a single-user home network, not an enterprise deployment, and it has no production change-control process. No infrastructure has been deployed on Azure or Google Cloud specifically; that remains coursework and tooling familiarity only — it does not describe cloud deployment generally, which I have done on AWS and a container platform (see [Distributed Systems](distributed-systems.md) and [Product Platforms](product-platforms.md)). The routing and switching work is simulation-lab coursework, not configuration of production hardware. The benchmark figures cited above come from single-workload samples on one machine, not from broad or repeated benchmarking, and are stated with that limitation each time.
 
 ## Related work
 

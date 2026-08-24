@@ -14,8 +14,9 @@ Repository placeholder used throughout:
 
 I am completing associate degrees in Information Technology at Fayetteville Technical Community
 College, and I hold the CompTIA A+, Network+, and Security+ certifications along with an A.A.S. in
-System Security and Analysis. Alongside coursework I build and test software systems, and I document
-them to a standard where someone else can check my claims rather than take my word for them.
+System Security and Analysis. Alongside coursework I build and test software systems — including deploying and operating
+multi-service cloud and container-platform infrastructure — and I document them to a standard
+where someone else can check my claims rather than take my word for them.
 
 The through-line in my work is verification. I design systems on the assumption that a component's
 own report of success is a claim to be checked, not a fact to be trusted, and I hold my own results

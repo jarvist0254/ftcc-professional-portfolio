@@ -26,7 +26,7 @@ A durable checkpoint layer records progress at task boundaries so a long run can
 
 **Durable, resumable checkpointing, instead of restart-from-scratch on failure.** A multi-hour run that fails once near the end, with no resume point, loses the whole run. Checkpointing at task boundaries costs some throughput but makes a long run survivable, and the recovered run's byte-identical output is what makes that resume trustworthy rather than just convenient.
 
-**Retraction as a required step, instead of quietly revising a number.** It would be simpler to just update a figure when a problem turns up. Instead the process requires the original claim to be marked invalid in a visible record before a corrected finding replaces it, so the fact that something was wrong is not lost along with the fix.
+**Retraction as a required step, instead of quietly revising a number.** It would be simpler to just update a figure when a problem turns up. Instead the process requires the original claim to be marked invalid in a visible record before a corrected finding replaces it, so the fact that something was wrong is not lost along with the fix. This is deliberate practice, not an occasional admission prompted by getting caught — the record of what was withdrawn and why is one of this system's more telling outputs.
 
 ## Publicly demonstrated / evidence available
 

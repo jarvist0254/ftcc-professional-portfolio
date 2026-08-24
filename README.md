@@ -44,14 +44,15 @@ work. *Status: Implemented; single-operator, not independently verified.*
 | **[Security Operations Practice](projects/security-operations.md)** | Graded security-operations coursework — access-control review, an intrusion timeline, a posture assessment — alongside a self-built SOC tooling prototype. |
 | **[Home Lab and Compute Infrastructure](projects/infrastructure-networking.md)** | A personal network reached through a private device-authorized overlay instead of a forwarded port, plus compute routed by measured CPU/GPU crossover. |
 | **[Local-Inference Desktop Platform](projects/local-inference-platform.md)** | A Windows desktop application whose core model inference runs locally on CPU, with no hosted model API in that path. |
-| **[Product Platforms](projects/product-platforms.md)** | Several independently built web and desktop product surfaces, with the API, integration, and cost trade-offs behind them. |
-| **[Distributed Systems](projects/distributed-systems.md)** | A network designed to pay for independently re-checked useful computation rather than hash-based mining. |
+| **[Product Platforms](projects/product-platforms.md)** | Several independently built product surfaces — four services **deployed and operated** on a container platform, with the API, integration, and cost trade-offs behind them. |
+| **[Distributed Systems](projects/distributed-systems.md)** | A network paying for independently re-checked useful computation, on a **multi-service AWS footprint I deployed and operated**. |
 | **[Quantitative Research System](projects/quantitative-research.md)** | A walk-forward research instrument built to find the flaws in its own results, including formal retraction of findings that failed review. |
 | **[Machine-Learning Model Publication](projects/machine-learning-models.md)** | Open model bases, local-first design constraints, and a deliberate line between what is published and what is withheld. |
 | **[Technical Decision Records](projects/technical-decision-records.md)** | Thirteen decisions with the alternatives rejected and what the evidence showed — including where nothing was measured. |
 
-Status labels used throughout: **Publicly demonstrated** · **Implemented** · **Prototype** ·
-**Research instrument** · **Coursework** · **Available on request**.
+Status labels used throughout: **Deployed and operated** · **Publicly demonstrated** ·
+**Implemented** · **Prototype** · **Research instrument** · **Coursework** ·
+**Available on request**.
 
 Full index with descriptions: [projects/](projects/README.md)
 
@@ -65,7 +66,7 @@ Full index with descriptions: [projects/](projects/README.md)
 
 **Automation and development** — Python · Bash · FastAPI · REST APIs · SQL · Git · Linux · JSON schema design · test automation
 
-**Infrastructure** — Linux administration · containerised deployment · storage architecture · performance measurement · CPU/GPU workload routing
+**Infrastructure** — Linux administration · cloud deployment and operations (serverless compute, managed NoSQL/relational data, CDN, DNS, object storage, queueing/pub-sub, containerised service deployment) · storage architecture · performance measurement · CPU/GPU workload routing
 
 *Studying: BGP, multi-area OSPFv3, first-hop redundancy, cloud platform fundamentals.*
 
@@ -104,16 +105,22 @@ unverified or leaves it out.
 
 ### Scope of the work
 
-- **Shipped and operating:** the verification pipeline and the personal network and compute
-  environment, both built and run by me as single-operator systems.
+- **Deployed and operated:** a multi-service AWS footprint and four services on a container
+  platform — see [Distributed Systems](projects/distributed-systems.md) and
+  [Product Platforms](projects/product-platforms.md).
+- **Implemented:** the verification pipeline and the personal network and compute environment,
+  both built and run by me as single-operator systems.
 - **Prototype:** the SOC tooling. Partially implemented, never production-operational.
-- **Coursework:** the security-operations artifacts, the networking labs, and cloud platform study.
+- **Coursework:** the security-operations artifacts, the networking labs, and Azure/Google Cloud
+  platform study.
 
 ### What I have not done
 
 I have not worked on a security team, handled a live incident, or deployed or administered a
-commercial SIEM or EDR product. I have not deployed infrastructure on Azure or Google Cloud; that
-experience is coursework and tooling familiarity. No code here has been audited by a third party.
+commercial SIEM or EDR product. On Azure and Google Cloud specifically, I have not deployed any
+infrastructure — that experience is coursework and tooling familiarity only (my deployed cloud
+experience is on AWS and a container platform; see Scope of the work above). No code here has
+been audited by a third party.
 
 I would rather you know that from the page than discover it in an interview.
 

@@ -12,6 +12,7 @@ only purpose is to tell a reviewer what kinds of material can be requested and r
 | Networking simulation lab files | Configuration and topology files built in a network simulation environment to practice routing, segmentation, and access-control concepts. |
 | Benchmark measurement records | Timing and throughput measurements taken from running workloads, used to support routing and performance decisions described in the project write-ups. |
 | Security tooling configuration examples | Example configurations and rule sets built while learning and testing security tooling, produced outside any employer or client environment. |
+| Cloud infrastructure deployment evidence | An exported configuration set from a deployed multi-service cloud account, organized by service, plus a set of container-platform service deployment configurations. |
 | Design and architecture notes | Written design rationale for the systems described in this repository — the reasoning behind structural decisions, not the systems' internal operational data. |
 
 ## Availability
