@@ -102,6 +102,6 @@ I would rather you know that from the page than discover it in an interview.
 
 - **Email:** `[add professional email before publishing]`
 - **LinkedIn:** `[add LinkedIn URL before publishing]`
-- **GitHub:** `[add published GitHub URL before publishing]`
+- **GitHub:** https://github.com/jarvist0254/ftcc-professional-portfolio
 
 *Available for junior security roles — remote, or in the Fayetteville and Raleigh area.*

@@ -1,7 +1,7 @@
 # Canvas Portfolio Entry — copy-paste ready
 
 Paste the section below into Canvas. Replace the three bracketed placeholders first.
-The GitHub links become live once the repository is published; until then they will 404.
+The repository is published and public, so the GitHub links below are live.
 
 Repository placeholder used throughout:
 `https://github.com/jarvist0254/ftcc-professional-portfolio`
@@ -93,6 +93,6 @@ Work through these in order. Do not skip step 3.
 
 - [ ] Professional email inserted in both places
 - [ ] LinkedIn URL inserted
-- [ ] Repository actually published, or links marked as pending in the Canvas entry
+- [x] Repository published and public
 - [ ] `REVIEW_CHECKLIST.md` completed
 - [ ] All four GitHub links opened in incognito and confirmed loading
