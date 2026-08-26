@@ -9,10 +9,10 @@
 # THIS FILE MUST EXIST, COMMITTED, BEFORE THE FIRST COMMIT of this
 # repository. If `git init` / the first `git add` happens before this file
 # is in place, anything matching the patterns below may already be tracked
-# in history — see REVIEW_CHECKLIST.md section 5 ("deleting a file later
-# does not remove it from git history").
+# in history. Deleting a file later does not remove it from git history —
+# a secret that was ever committed must be treated as disclosed and rotated.
 #
-# See REVIEW_CHECKLIST.md before every push — this file prevents accidental
+# Review the working tree before every push — this file prevents accidental
 # staging, it does not replace the manual review.
 # ============================================================
 

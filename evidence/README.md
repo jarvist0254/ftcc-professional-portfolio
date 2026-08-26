@@ -25,5 +25,5 @@ technical interviewer), through a direct, individually arranged review rather th
 distribution.
 
 Only this high-level index and specifically approved, sanitized visual artifacts (redacted
-screenshots/diagrams meeting the checklist in `assets/README.md` and `REVIEW_CHECKLIST.md`) may
+screenshots/diagrams meeting the checklist in `assets/README.md`) may
 ever be committed to this directory. Nothing else is added here, regardless of how minor it seems.
