@@ -40,15 +40,18 @@ work. *Status: Implemented; single-operator, not independently verified.*
 
 | Project | What it is |
 |---|---|
+| **[Herizon Linux Sovereign OS](projects/herizon-linux.md)** | A sovereign, bootable Linux distribution engineered for on-device local AI (Qwen3-0.6B CPU, 14 trained heads). Live ISO 1.1.9-dev (7.28 GB) guest-verified PASS on BIOS and UEFI; approaching stable 1.2 release. |
+| **[The Harness & J-Link Compute Fabric](projects/the-harness-and-jlink.md)** | A 4-bay GPU compute chassis (FreeCAD solid BRep) and software fabric proving cross-vendor consumer P2P limits and implementing ThunderEP host-staged DMA across NVIDIA and AMD. |
+| **[Product Platforms](projects/product-platforms.md)** | An ecosystem of eight local-first Windows desktop applications published on the Microsoft Store with dedicated perspective landing pages on jehorizon.com. |
+| **[Fix_eight Quality & Remediation Suite](projects/fix-eight-audit.md)** | A 433-case testing register and multi-agent defect remediation program across eight flagship applications, proving root-cause fixes across WinRT pickers, print stylesheets, and SQL decision ledgers. |
 | **[Verification Factory](projects/verification-factory.md)** | A verifier-governed task pipeline where no component certifies its own output and missing evidence fails closed. |
-| **[Security Operations Practice](projects/security-operations.md)** | Graded security-operations coursework — access-control review, an intrusion timeline, a posture assessment — alongside a self-built SOC tooling prototype. |
+| **[Security Operations Practice](projects/security-operations.md)** | Graded security-operations coursework -- access-control review, an intrusion timeline, a posture assessment -- alongside a self-built SOC tooling prototype. |
 | **[Home Lab and Compute Infrastructure](projects/infrastructure-networking.md)** | A personal network reached through a private device-authorized overlay instead of a forwarded port, plus compute routed by measured CPU/GPU crossover. |
 | **[Local-Inference Desktop Platform](projects/local-inference-platform.md)** | A Windows desktop application whose core model inference runs locally on CPU, with no hosted model API in that path. |
-| **[Product Platforms](projects/product-platforms.md)** | Several independently built product surfaces — four services **deployed and operated** on a container platform, with the API, integration, and cost trade-offs behind them. |
 | **[Distributed Systems](projects/distributed-systems.md)** | A network paying for independently re-checked useful computation, on a **multi-service AWS footprint I deployed and operated**. |
 | **[Quantitative Research System](projects/quantitative-research.md)** | A walk-forward research instrument built to find the flaws in its own results, including formal retraction of findings that failed review. |
-| **[Machine-Learning Model Publication](projects/machine-learning-models.md)** | Open model bases, local-first design constraints, and a deliberate line between what is published and what is withheld. |
-| **[Technical Decision Records](projects/technical-decision-records.md)** | Thirteen decisions with the alternatives rejected and what the evidence showed — including where nothing was measured. |
+| **[Machine-Learning Model Publication](projects/machine-learning-models.md)** | Open model bases, local-first design constraints, and 16,041 all-time downloads on Hugging Face (audited 2026-10-04). |
+| **[Technical Decision Records](projects/technical-decision-records.md)** | Seventeen decisions with the alternatives rejected and what the evidence showed -- including where nothing was measured. |
 
 Status labels used throughout: **Deployed and operated** · **Publicly demonstrated** ·
 **Implemented** · **Prototype** · **Research instrument** · **Coursework** ·

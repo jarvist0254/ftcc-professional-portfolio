@@ -160,6 +160,56 @@ Anyone can list what they chose. The more useful record is what was rejected, an
 
 **Boundary.** This describes the settlement mechanism's design intent, not a claim the network is live, publicly deployed, or carrying real economic volume. It shares its principle with decision 1: the actor performing the work is never the actor certifying it.
 
+
+## 14. Host-staged DMA architecture over unsupported consumer cross-vendor P2P
+
+**Decision.** In heterogeneous multi-GPU acceleration (NVIDIA, AMD, Intel), rely on an explicit host-staged DMA bridge using dedicated asynchronous copy queues rather than attempting cross-vendor direct VRAM peer-to-peer (P2P).
+
+**Alternatives considered.** Enforcing direct cross-vendor PCIe P2P; relying on unoptimized driver-level fallback paths; restricting clusters strictly to single-vendor cards.
+
+**Why this choice.** Formal driver and specification audits confirmed that cross-vendor direct dedicated-VRAM P2P does not exist as a supported mechanism on consumer hardware on Windows or Linux as of 2026. Microsoft DirectX 12 explicitly restricts cross-adapter shared heaps to system memory. ThunderEP-style host-staged staging (single-hop device->host->device transfers with DMA copy engines) achieves high throughput without relying on unsupported driver assumptions.
+
+**What the evidence showed.** Achieved exact CPU-reference parity across 151,936 logits on a derived F32 Vulkan model across NVIDIA discrete and AMD APU in both device orders, and detected 13 distinct negative corruption controls.
+
+**Boundary.** Demonstrates host-staged heterogeneous layer execution and numerical stability; does not establish pooled 32 GB capacity scaling across physical external cards.
+
+## 15. Default AI-off operating system architecture for Herizon Linux
+
+**Decision.** In the Herizon Linux operating system, machine intelligence is kept strictly off by default, initializing lazily only upon explicit user invocation and cleanly evicting all memory contexts upon shutdown or toggle-off.
+
+**Alternatives considered.** Running background LLM daemons continuously; background semantic file indexing; streaming desktop context to cloud foundation models.
+
+**Why this choice.** Modern operating systems compromise user privacy and deplete battery/CPU resources by running unmonitored background telemetry. An air-gapped, sovereign operating system must guarantee zero idle resource overhead and zero external data transmission.
+
+**What the evidence showed.** The lazy Qwen3-0.6B Q8_0 CPU backbone and 14 specialized neural heads achieved 94.76% accuracy across a 210-case frozen synthetic development benchmark while making zero foundation model API calls.
+
+**Boundary.** Scored against independently authored synthetic development routing and refusal cases; does not evaluate open-domain general knowledge or multi-turn conversational reasoning.
+
+## 16. Content-fingerprinted decision ledger over destructive SQL delete loops (RevLatch)
+
+**Decision.** In the RevLatch engineering review workbench, maintain drawing approvals and annotations in an immutable, content-fingerprinted decision ledger rather than relying on mutable relational table cascades.
+
+**Alternatives considered.** In-place SQL row updates; cascade deletion and re-insertion; client-side state caching.
+
+**Why this choice.** Root-cause debugging of drawing-review state loss revealed that refreshing non-critical regions triggered an SQL query deleting rows with kind NOT IN ('critical_region'), followed by an INSERT OR IGNORE that reset review states to schema defaults. A content-fingerprinted ledger keyed by SHA-256 tile hashes preserves an unalterable audit log across drawing revisions.
+
+**What the evidence showed.** Resolved review-state loss across 28 unit tests and a 315-test scoped regression sweep.
+
+**Boundary.** Validated against local SQLite test databases; full-solution App UI build gating remains an active milestone.
+
+## 17. WinRT file save-picker placeholder detection for atomic persistence (CutoverCheck)
+
+**Decision.** In CutoverCheck, re-engineer atomic file writers to distinguish between pre-existing user files and freshly allocated WinRT file-save-picker placeholders via process ownership and file age validation.
+
+**Alternatives considered.** Disabling atomic write safety guards; forcing direct path text entry without native dialogs; overwriting all existing files unconditionally.
+
+**Why this choice.** Calling Windows WinRT FileSavePicker.PickSaveFileAsync() creates an empty, 0-byte placeholder at the destination. CutoverCheck's atomic file writer strictly refused any existing file to protect user data, causing silent 0-byte export failures. Validating the placeholder handle allows atomic safety without blocking native OS save pickers.
+
+**What the evidence showed.** Resolved zero-byte file export failures with 0 failed / 0 skipped across 55 persistence tests and live UNC network shares.
+
+**Boundary.** Tested against Windows WinUI 3 file picker contracts and local filesystem targets; cloud drive synchronization locks require separate testing.
+
 ---
+
 
 Several measurements above — the flushing comparison, the compression estimate, the storage latency figures, the CPU/GPU crossover thresholds — come from a single workload on a single machine, observed once or a few times, not repeated trials elsewhere. They are stated at that strength deliberately: re-measuring them in a different environment could move the number, and one figure already had to be corrected once checked properly.

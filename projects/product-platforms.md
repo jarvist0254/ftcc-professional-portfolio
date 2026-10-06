@@ -1,61 +1,96 @@
-# Product Platforms
-*Multiple independently built web and desktop product surfaces, and the architecture and cost trade-offs behind them.*
+# Product Platforms — The Eight Applications Ecosystem
+*A suite of eight local-first Windows desktop applications published on the Microsoft Store, paired with perspective web landing pages on jehorizon.com.*
 
-**Status:** Mixed — one product line retired; the container-platform services are **deployed and operated**; the rest is implemented and previously operated at beta/alpha status. Current public availability beyond the deployment configuration itself is not independently confirmed on this page.
+**Status:** Deployed and operated — All eight applications published or staged across the Microsoft Store ecosystem with dedicated public landing pages on `jehorizon.com` and `*.jehorizon.com`; comprehensive 433-case Fix_eight quality audit completed (October 2026).
 
-## Problem
+---
 
-Most of this work started from one question: given a small, self-funded infrastructure budget, what is the leanest architecture that still supports real payment processing, real customer communication, and a real login flow, without over-building for scale that does not exist yet? I built several independent product surfaces to answer that under different constraints, and one of them taught me when to retire a line rather than keep patching it.
+## Overview
 
-## What I built
+Between early 2026 and Fall 2026, J.E. Herizon LLC (Thomas Jarvis) shifted from early cloud SaaS experiments to build, package, and distribute a cohesive portfolio of eight local-first desktop applications targeting Windows 10/11 and professional operators. Each application adheres to a strict architectural philosophy:
+- **Local-First Execution:** Sensitive records and core workflows run entirely on the operator's machine without mandatory cloud subscriptions.
+- **Embedded Persistence:** Data is stored in local embedded engines (SQLite, encrypted JSON, or structured files) with platform-native encryption (Windows DPAPI).
+- **Zero Telemetry Leakage:** Operating system analytics, keystrokes, and customer data never leave the local environment.
+- **Unified Brand & Store Integration:** Each application features a dedicated public landing page on `jehorizon.com` and a registered listing in the Microsoft Store catalog.
 
-A small portfolio of separately deployed surfaces:
+---
 
-- **A parent company site** — a static informational page, no server-rendered logic.
-- **A desktop trading-research application** (Windows) — a subscription-gated client billed through a payment processor, with its own licensing backend.
-- **A lead-capture and intake service** — SMS and voice webhooks, email, and a web login flow, to catch and qualify inbound leads a small business would otherwise miss.
-- **A contractor operations dashboard** — a multi-page web app (leads, scheduling, quoting, invoicing) as the operator-facing counterpart to the intake service.
-- **A mobile companion app** (Android) — a cross-platform build authenticating against the dashboard's API with short-lived tokens.
-- **A desktop game-coaching client** — a local-first app running its own small classifier on-device, always requiring user confirmation before surfacing advice.
-- **A retired e-commerce platform** — an earlier full-stack storefront shut down in favor of the products above.
+## The Eight Applications: Architecture & Perspective Landing Pages
 
-Across the newer products: Python/FastAPI services, mostly fronted by a managed relational database, with payment processing, SMS/voice telephony webhooks, an OAuth login flow, and REST APIs consumed by both the web dashboard and the mobile app.
+```
++----------------------------------------------------------------------------------------------------+
+|                                    JE HORIZON APPLICATION ECOSYSTEM                                |
++------------------+-------------------+--------------------+-------------------+--------------------+
+| ContractorDesk   | Wittlet / Worlds  | PyRe GPU           | OmniHorizon CRM   | FilePerch          |
+| Dispatch & CRM   | Desktop Companion | Script Workbench   | Small Business ERP| Archive Workbench  |
++------------------+-------------------+--------------------+-------------------+--------------------+
+| ScopeStamp       | RevLatch          | CutoverCheck       | Herizon Linux     | The Harness        |
+| Evidence Timestamp| Review Ledger    | Move Verifier      | Sovereign OS      | Compute Chassis    |
++------------------+-------------------+--------------------+-------------------+--------------------+
+```
 
-![Product platform shape](../assets/product-platforms.svg)
+### 1. ContractorDesk / Line
+- **Functional Scope:** Complete operations desk for trade contractors (HVAC, plumbing, electrical, roofing). Provides estimate calculation, automated quoting, work order management, invoicing, offline dispatch, and 10DLC TCR-compliant automated SMS lead qualification.
+- **Architecture:** Next.js operator desk, FastAPI telephony backend, Twilio/Vapi webhooks, and an Expo/EAS Android mobile companion.
+- **Perspective Web Landing Page:** [https://line.jehorizon.com/](https://line.jehorizon.com/) and [https://jehorizon.com/line/](https://jehorizon.com/line/)
+- **Microsoft Store Listing:** [ContractorDesk on Microsoft Store](https://apps.microsoft.com/detail/9NZQV4GSJTJH) (`9NZQV4GSJTJH`)
 
-**The container platform underneath the newer services — deployed and operated, not a prototype.** Four distinct service configurations run on a single lightweight container platform, one per product: a lead-capture backend, a commerce/licensing backend, a contractor service API, and a front-end service. All four force HTTPS, run in a single primary region, and use autostart/autostop machines; two are configured always-on (`min_machines_running = 1`) and two scale to zero between requests. VM sizing ranges from 256 MB up to 2 GB depending on the service, and each builds from its own Dockerfile. Live running state was not independently re-confirmed while writing this page (see the scope boundary below), and app names and hostnames are not published.
+### 2. Wittlet & Wittlet Worlds
+- **Functional Scope:** Lightweight procedural desktop companion and room simulation. Offers interactive character dialogues, customizable virtual spaces, and reactive desktop presence with an ultra-lightweight memory footprint.
+- **Architecture:** Native Windows desktop client, procedural generative heuristics, local state serialization, and zero cloud dependencies.
+- **Perspective Web Landing Page:** [https://wittlet.jehorizon.com/](https://wittlet.jehorizon.com/) and [https://jehorizon.com/wittlet/](https://jehorizon.com/wittlet/) · [https://jehorizon.com/wittlet-worlds/](https://jehorizon.com/wittlet-worlds/)
+- **Microsoft Store Listing:** [Wittlet on Microsoft Store](https://apps.microsoft.com/detail/9PD8F625136L) (`9PD8F625136L`)
 
-For everything else on this page: I am not asserting any product is currently live as of this writing beyond the container-platform point above. Status moves between paused, beta, and retired over time, and I have not independently re-verified it here — ask me directly rather than trusting anything implied on this page.
+### 3. PyRe GPU
+- **Functional Scope:** Windows developer workbench for executing, queuing, and profiling Python scripts with optional GPU acceleration. Enforces CPU/GPU resource bounds, logs execution lifecycles, and captures run receipts.
+- **Architecture:** Python 3.11+, PySide6 GUI, Vulkan/OpenCL shader probes, and isolated subprocess execution.
+- **Perspective Web Landing Page:** [https://jehorizon.com/pyre/](https://jehorizon.com/pyre/)
+- **Microsoft Store Listing:** [PyRe GPU on Microsoft Store](https://apps.microsoft.com/detail/9MZPG0LSZS31) (`9MZPG0LSZS31`)
 
-## Technical decisions
+### 4. OmniHorizon AI CRM
+- **Functional Scope:** Unified local-first CRM, ERP, and quoting workspace for small businesses. Features client relationship ledgers, inventory tracking, invoice generation, and on-device natural language search over business records.
+- **Architecture:** Embedded SQLite persistence, local sentence embeddings for retrieval, lightweight webview GUI with HTML5/CSS print engines, and Windows DPAPI credential protection.
+- **Perspective Web Landing Page:** [https://jehorizon.com/omnihorizon/](https://jehorizon.com/omnihorizon/)
+- **Microsoft Store Listing:** [OmniHorizon AI CRM on Microsoft Store](https://apps.microsoft.com/detail/9NJSG0QJ7WCF) (`9NJSG0QJ7WCF`)
 
-**Static delivery on an edge platform instead of a server-rendered app for pages with no per-request logic.** Marketing pages don't change per visitor; running an origin server to render identical content adds cost with no benefit, so those went to an edge/CDN platform with zero-config deploys.
+### 5. FilePerch
+- **Functional Scope:** High-throughput desktop file staging, search, and integrity verification workbench. Rapidly locates files across multi-terabyte disk arrays, calculates recursive cryptographic digests, and plans deduplication before execution.
+- **Architecture:** High-concurrency multithreaded file crawler, SHA-256 hash streaming pipeline, and disk staging queue.
+- **Perspective Web Landing Page:** [https://fileperch.jehorizon.com/](https://fileperch.jehorizon.com/) and [https://jehorizon.com/fileperch/](https://jehorizon.com/fileperch/)
+- **Microsoft Store Listing:** [FilePerch on Microsoft Store](https://apps.microsoft.com/detail/9NQXV7HD0MMX) (`9NQXV7HD0MMX`)
 
-**A lightweight container platform for the newer, simpler backends, instead of the heavier managed cloud stack used for the oldest one.** The retired e-commerce platform ran on a fuller managed cloud stack — load-balanced compute, a managed database with failover, a managed cache, a web application firewall — because it carried real stateful, multi-service complexity. The newer, simpler services don't need that, so they run leaner on the container platform described above instead. This is a choice between two kinds of platform I have actually deployed and operated on, not a stated preference for one I haven't used — AWS elsewhere in this portfolio (see [Distributed Systems](distributed-systems.md)) and the container platform here: workload fit, not a verdict that the heavier stack was wrong.
+### 6. ScopeStamp
+- **Functional Scope:** Digital evidentiary timestamping and scope-verification workbench. Enables field operators and contractors to document change orders, extra site work, and photographic proof with cryptographic tamper evidence and verifiable receipts.
+- **Architecture:** Local cryptographic hashing (SHA-256/HMAC), EXIF metadata extraction, PDF audit package generation, and tamper-evident append-only ledger.
+- **Perspective Web Landing Page:** [https://jehorizon.com/scopestamp/](https://jehorizon.com/scopestamp/)
+- **Microsoft Store Listing:** [ScopeStamp on Microsoft Store](https://apps.microsoft.com/detail/9NGKPNG4KC03) (`9NGKPNG4KC03`)
 
-**A shared backend module reused across products, instead of writing each backend from zero.** Auth handling, third-party API routing with fallback, and caching were extracted once and reused. The trade-off is coupling, accepted to avoid re-solving the same plumbing repeatedly.
+### 7. RevLatch
+- **Functional Scope:** Engineering revision diffing and decision-auditing workbench. Allows engineers, architects, and managers to compare drawing revisions, track critical-region changes, and preserve an unalterable sign-off ledger across review cycles.
+- **Architecture:** Python/PySide6 desktop client, SQLite decision ledger, raster/vector diff engine, and content-fingerprinted change tracking.
+- **Perspective Web Landing Page:** [https://jehorizon.com/revlatch/](https://jehorizon.com/revlatch/)
+- **Microsoft Store Listing:** [RevLatch on Microsoft Store](https://apps.microsoft.com/detail/9MTLXPDK0LLR) (`9MTLXPDK0LLR`)
 
-**A minimum viable channel first, instead of building every communication channel at once.** The intake service shipped text and email first; voice was a deliberate second phase, added once the cheaper channel proved the workflow.
+### 8. CutoverCheck
+- **Functional Scope:** Pre-flight and post-flight PC migration verification tool. Captures a read-only recursive SHA-256 baseline before a system migration, compares files on the destination, and exports a standalone, portable HTML audit certificate.
+- **Architecture:** .NET 8, C#, WinUI 3 / Windows App SDK, high-speed streaming SHA-256 calculation, and atomic file writers.
+- **Perspective Web Landing Page:** [https://jehorizon.com/cutovercheck/](https://jehorizon.com/cutovercheck/)
+- **Microsoft Store Listing:** [CutoverCheck on Microsoft Store](https://apps.microsoft.com/detail/9MWGM28H0KZC) (`9MWGM28H0KZC`)
 
-**Retiring the e-commerce line instead of continuing to invest in it.** It had a working checkout and a real catalog, but the unit economics did not justify continued investment against the products above. A decision on what not to build is still an engineering decision.
+---
 
-## Publicly demonstrated / evidence available
+## Technical Decisions & Infrastructure Discipline
 
-**Publicly verifiable now:** the diagram above, showing the shape of the product architecture and cost model in generic form, is in this repository for direct inspection.
+1. **Static Edge Delivery for Marketing Surfaces:** Marketing pages do not change per visitor; running origin servers adds unnecessary recurring cost. Frontends are deployed globally via Cloudflare Pages with zero-config TLS, custom subdomains, and instant edge routing.
+2. **Local-First Architecture over SaaS Hosting:** Rather than hosting multi-tenant databases with high operational liability, core business workflows run on user workstations, reducing server costs to near-zero while offering absolute data privacy.
+3. **Microsoft Store Distribution:** Delivering software as packaged MSIX / Windows desktop applications via the Microsoft Store provides verified code signatures, clean OS isolation, and trusted distribution.
+4. **Fix_eight Quality Audit:** Before wide commercial availability, all eight applications were subjected to a 433-case automated quality audit evaluating offline resilience, credential hygiene, and file atomicity (see [Fix_eight Audit](fix-eight-audit.md)).
 
-**Available only on request, not independently verifiable here:** the itemized monthly infrastructure cost breakdown (the fixed recurring cost lands in the low tens of dollars per month, by design), the break-even comparison against subscription pricing, and the backend codebases and deployment configuration for each product. I am not publishing a precise dollar figure as a verified fact, and I am not publishing revenue, subscriber, or customer counts anywhere in this portfolio.
+---
 
-## Outcome
+## Related Work
 
-The result is a working pattern for standing up a service-business product cheaply: static delivery where nothing is dynamic, a lean container platform where a service is simple, and the heavier managed stack reserved for the one workload that needed it. The cost model targets a single paying subscriber covering the fixed monthly infrastructure cost several times over — a design target, not a claim it has been achieved at scale. Retiring the weakest line freed attention for the products that fit the model better.
-
-## Honest scope boundary
-
-Deployed and operated on the container platform is a claim about infrastructure and configuration, asserted by me as the operator and consistent with what's on disk — the CLI on this machine is not currently authenticated to that account, so I could not independently re-confirm live running state, and I am not claiming a verified live URL, uptime, or traffic figure for it. Beyond that specific point, I am not claiming any product here is in active production use, or has revenue, paying customers, active subscriptions, or a verified adoption number. No third-party security audit or compliance certification has been performed on any of these systems. At least one dashboard product's deployment status has, at points, been internally ambiguous between "built and running locally" and "deployed publicly" — I am not resolving that here by asserting a status I have not re-verified. The infrastructure cost figures are directional, not audited financials. Current availability of any product named above should be confirmed directly with me, not assumed from this page.
-
-## Related work
-
-- **[Secure Home Lab and Compute Infrastructure](infrastructure-networking.md)** — the same cost-aware, measured-not-assumed approach, applied to a personal compute environment.
-- **[Local-Inference Desktop Platform](local-inference-platform.md)** — the desktop trading-research application above is documented in full architectural detail there.
-- **[Distributed Systems](distributed-systems.md)** — the same serverless-backend instinct (functions, a data layer, orchestration) reused for a blockchain compute network instead of a service business.
-- **[Technical Decision Records](technical-decision-records.md)** — the platform trade-off described here, stated as a decision record with the alternative that was rejected.
+- **[Fix_eight Audit & Remediation](fix-eight-audit.md)** — The 433-case multi-agent quality audit across all eight applications.
+- **[Herizon Linux](herizon-linux.md)** — Sovereign operating system for local AI.
+- **[The Harness & J-Link](the-harness-and-jlink.md)** — Multi-GPU compute chassis and host-staged DMA software fabric.
+- **[Technical Decision Records](technical-decision-records.md)** — Architectural decision records for local persistence and desktop integration.

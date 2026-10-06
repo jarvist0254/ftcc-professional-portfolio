@@ -1,6 +1,6 @@
 # Projects
 
-Nine pages covering cybersecurity, systems engineering, local-first AI, distributed systems,
+Twelve pages covering cybersecurity, systems engineering, local-first AI, distributed systems,
 software products, and research methodology. Every page follows the same structure and ends with an
 honest scope boundary.
 
@@ -30,15 +30,25 @@ honest scope boundary.
 
 ## Software and AI
 
+- **[Herizon Linux Sovereign OS](herizon-linux.md)** — a bootable, privacy-first Linux distribution built
+  on Debian 13 (Trixie) for on-device AI (Qwen3-0.6B Q8_0 CPU backbone, 14 trained heads) and verified
+  personal computing. Live developer ISO 1.1.9-dev guest-verified PASS on BIOS and UEFI; approaching stable 1.2 release.
+  *Implemented and verified.*
+- **[Product Platforms](product-platforms.md)** — eight commercial Windows desktop applications published on the
+  Microsoft Store with dedicated perspective landing pages on `jehorizon.com` and `*.jehorizon.com`.
+  *Deployed and operated.*
+- **[Fix_eight Quality & Remediation Suite](fix-eight-audit.md)** — a 433-case testing register and multi-agent
+  defect remediation program across eight flagship applications, proving root-cause fixes across WinRT pickers,
+  print stylesheets, and SQL decision ledgers. *Implemented and verified.*
+- **[The Harness & J-Link Compute Fabric](the-harness-and-jlink.md)** — an engineered 4-bay GPU compute chassis
+  (FreeCAD parametric solid BRep) and software fabric proving cross-vendor consumer P2P limits and implementing
+  ThunderEP host-staged DMA. *Engineered system and research instrument.*
 - **[Local-Inference Desktop Platform](local-inference-platform.md)** — a desktop application
   running its core model inference locally on CPU, with no hosted model API in that path and
   optional external features disclosed separately. *Implemented.*
-- **[Product Platforms](product-platforms.md)** — several independently built product surfaces, the
-  API and integration work behind them, and a documented platform trade-off argued on workload
-  rather than preference. *Mixed; per-product status stated.*
-- **[Machine-Learning Model Publication](machine-learning-models.md)** — two openly published model
-  bases, local-first design constraints, and the reasoning behind what was deliberately withheld.
-  *Publicly demonstrated in part.*
+- **[Machine-Learning Model Publication](machine-learning-models.md)** — twenty-three model repositories
+  on Hugging Face with 16,041 all-time downloads (audited 2026-10-04), local-first constraints, and clear licensing boundaries.
+  *Publicly demonstrated.*
 
 ## Distributed systems and research
 
@@ -51,7 +61,7 @@ honest scope boundary.
 
 ## Engineering judgment
 
-- **[Technical Decision Records](technical-decision-records.md)** — thirteen decisions, each with
+- **[Technical Decision Records](technical-decision-records.md)** — seventeen decisions, each with
   the alternatives rejected, what the evidence showed, and where nothing was measured. The best
   single page for a technical interviewer.
 
