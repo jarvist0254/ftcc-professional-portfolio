@@ -1,7 +1,7 @@
 # Herizon Linux — Sovereign Operating System
 *A bootable, privacy-first Linux distribution built for local AI models, grounded terminal synthesis, and audited personal computing.*
 
-**Status:** Implemented and verified — Developer Live ISO (`1.1.9-dev`, 7.28 GB); BIOS and UEFI in-guest boots verified PASS (2026-10-06); approaching stable 1.2 general availability release.
+**Status:** Implemented and verified — Dual BIOS and UEFI in-guest boots verified PASS; approaching stable 1.2 general availability release.
 
 ---
 
@@ -15,8 +15,7 @@ Modern desktop operating systems increasingly convert local workstations into te
 - **Grounded Terminal Synthesis & Command RAG:** Natural language shell assistance grounded in local manpages, binaries, and system state with typed execution proposals—never unconstrained autonomous shell execution.
 - **Offline Application Packs:** Pre-caches 9 offline APT package archives containing 170 software selections (networking, forensics, security, development, and media) for instant utility in air-gapped environments.
 
-Live Landing Page: [https://jehorizon.com/herizon-linux/](https://jehorizon.com/herizon-linux/)  
-Source Repository: [https://github.com/jarvist0254/herizon-linux](https://github.com/jarvist0254/herizon-linux)
+Live Landing Page: [https://jehorizon.com/herizon-linux/](https://jehorizon.com/herizon-linux/) (Stable 1.2 Release Pending)
 
 ---
 

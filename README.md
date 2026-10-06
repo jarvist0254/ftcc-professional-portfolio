@@ -40,10 +40,9 @@ work. *Status: Implemented; single-operator, not independently verified.*
 
 | Project | What it is |
 |---|---|
-| **[Herizon Linux Sovereign OS](projects/herizon-linux.md)** ([GitHub](https://github.com/jarvist0254/herizon-linux)) | A sovereign, bootable Linux distribution engineered for on-device local AI (Qwen3-0.6B CPU, 14 trained heads). Live ISO 1.1.9-dev (7.28 GB) guest-verified PASS on BIOS and UEFI; approaching stable 1.2 release. |
+| **[Herizon Linux Sovereign OS](projects/herizon-linux.md)** | A sovereign, bootable Linux distribution engineered for on-device local AI (Qwen3-0.6B CPU, 14 trained heads); first stable release (1.2 GA) approaching. |
 | **[The Harness & J-Link Compute Fabric](projects/the-harness-and-jlink.md)** ([GitHub](https://github.com/jarvist0254/the-harness)) | A 4-bay GPU compute chassis (FreeCAD solid BRep) and software fabric proving cross-vendor consumer P2P limits and implementing ThunderEP host-staged DMA across NVIDIA and AMD. |
-| **[Product Platforms](projects/product-platforms.md)** | An ecosystem of eight local-first Windows desktop applications published on the Microsoft Store with dedicated perspective landing pages on jehorizon.com. |
-| **[Fix_eight Quality & Remediation Suite](projects/fix-eight-audit.md)** ([GitHub](https://github.com/jarvist0254/fix-eight)) | A 433-case testing register and multi-agent defect remediation program across eight flagship applications, proving root-cause fixes across WinRT pickers, print stylesheets, and SQL decision ledgers. |
+| **[Product Platforms](projects/product-platforms.md)** | An ecosystem of eight local-first Windows desktop applications published on the Microsoft Store with dedicated perspective landing pages on jehorizon.com and GitHub technical documentation repositories. |
 | **[Verification Factory](projects/verification-factory.md)** | A verifier-governed task pipeline where no component certifies its own output and missing evidence fails closed. |
 | **[Security Operations Practice](projects/security-operations.md)** | Graded security-operations coursework -- access-control review, an intrusion timeline, a posture assessment -- alongside a self-built SOC tooling prototype. |
 | **[Home Lab and Compute Infrastructure](projects/infrastructure-networking.md)** | A personal network reached through a private device-authorized overlay instead of a forwarded port, plus compute routed by measured CPU/GPU crossover. |
