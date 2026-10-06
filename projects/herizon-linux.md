@@ -15,7 +15,8 @@ Modern desktop operating systems increasingly convert local workstations into te
 - **Grounded Terminal Synthesis & Command RAG:** Natural language shell assistance grounded in local manpages, binaries, and system state with typed execution proposals—never unconstrained autonomous shell execution.
 - **Offline Application Packs:** Pre-caches 9 offline APT package archives containing 170 software selections (networking, forensics, security, development, and media) for instant utility in air-gapped environments.
 
-Live Landing Page: [https://jehorizon.com/herizon-linux/](https://jehorizon.com/herizon-linux/)
+Live Landing Page: [https://jehorizon.com/herizon-linux/](https://jehorizon.com/herizon-linux/)  
+Source Repository: [https://github.com/jarvist0254/herizon-linux](https://github.com/jarvist0254/herizon-linux)
 
 ---
 

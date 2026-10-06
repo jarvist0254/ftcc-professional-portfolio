@@ -19,6 +19,8 @@ In October 2026, J.E. Herizon LLC executed **Fix_eight**, an intensive quality a
 8. **Error Boundaries:** Non-crashing graceful degradation under unexpected I/O.
 9. **Telemetry Minimization:** Zero cloud tracking, zero dark-pattern analytics.
 
+Source Repository: [https://github.com/jarvist0254/fix-eight](https://github.com/jarvist0254/fix-eight)
+
 ---
 
 ## Product Coverage & Case Register

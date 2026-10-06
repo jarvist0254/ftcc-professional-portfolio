@@ -30,17 +30,17 @@ honest scope boundary.
 
 ## Software and AI
 
-- **[Herizon Linux Sovereign OS](herizon-linux.md)** — a bootable, privacy-first Linux distribution built
+- **[Herizon Linux Sovereign OS](herizon-linux.md)** ([GitHub](https://github.com/jarvist0254/herizon-linux)) — a bootable, privacy-first Linux distribution built
   on Debian 13 (Trixie) for on-device AI (Qwen3-0.6B Q8_0 CPU backbone, 14 trained heads) and verified
   personal computing. Live developer ISO 1.1.9-dev guest-verified PASS on BIOS and UEFI; approaching stable 1.2 release.
   *Implemented and verified.*
 - **[Product Platforms](product-platforms.md)** — eight commercial Windows desktop applications published on the
   Microsoft Store with dedicated perspective landing pages on `jehorizon.com` and `*.jehorizon.com`.
   *Deployed and operated.*
-- **[Fix_eight Quality & Remediation Suite](fix-eight-audit.md)** — a 433-case testing register and multi-agent
+- **[Fix_eight Quality & Remediation Suite](fix-eight-audit.md)** ([GitHub](https://github.com/jarvist0254/fix-eight)) — a 433-case testing register and multi-agent
   defect remediation program across eight flagship applications, proving root-cause fixes across WinRT pickers,
   print stylesheets, and SQL decision ledgers. *Implemented and verified.*
-- **[The Harness & J-Link Compute Fabric](the-harness-and-jlink.md)** — an engineered 4-bay GPU compute chassis
+- **[The Harness & J-Link Compute Fabric](the-harness-and-jlink.md)** ([GitHub](https://github.com/jarvist0254/the-harness)) — an engineered 4-bay GPU compute chassis
   (FreeCAD parametric solid BRep) and software fabric proving cross-vendor consumer P2P limits and implementing
   ThunderEP host-staged DMA. *Engineered system and research instrument.*
 - **[Local-Inference Desktop Platform](local-inference-platform.md)** — a desktop application

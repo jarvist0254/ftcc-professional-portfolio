@@ -14,6 +14,8 @@ Consumer artificial intelligence and scientific computing hardware is artificial
 - **The Cross-Vendor P2P Verdict:** Formal research (`docs/10_JLINK_CROSS_VENDOR_P2P_VERDICT_AND_PLAN.md`) establishing that **direct cross-vendor dedicated-VRAM peer-to-peer (P2P) access does not exist on consumer hardware on Windows or Linux as of 2026**.
 - **J-Link Host-Staged DMA Fabric:** An optimized software fabric implementing ThunderEP-style asynchronous copy queues over Direct3D 12 cross-adapter shared heaps and Vulkan staging buffers, achieving exact CPU-reference parity and detecting thirteen corruption controls.
 
+Source Repository: [https://github.com/jarvist0254/the-harness](https://github.com/jarvist0254/the-harness)
+
 ---
 
 ## Mechanical CAD Architecture (Revision 4)
